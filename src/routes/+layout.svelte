@@ -1,7 +1,6 @@
 <script lang="ts">
 	import '../myBulma.css';
 	import '../app.css';
-
 	import getI18nStore from '$lib/i18n';
 	import { setContext } from 'svelte';
 

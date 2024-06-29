@@ -23,12 +23,13 @@ The [main website](https://www.abstractplay.com) houses the development blog and
 - After you have node-backend (https://github.com/AbstractPlay/node-backend) deployed you can debug locally with `npm start`.
 
 ## Deploy to AWS
-  - Install AWS-CLI. See https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
-  - If you are using VSCode it is probably a good idea to install the AWS Toolkit for VSCode. See: https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/setup-toolkit.html
-  - Make sure you have your AWS credentials "installed". See: https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/setup-credentials.html
-  - Use the profile names AbstractPlayDev and AbstractPlayProd.
-  - Make sure serverless is installed: `npm install -g serverless`
-  - For the very first deployment (in order to set up the S3 bucket and the CloudFront distribution), run `serverless deploy` and
-    `serverless --stage prod deploy`
-  - Now find the distribution ids (e.g. through the AWS console > CloudFront) and copy to the invalidate and invalidate-prod npm scripts in package.json.
-  - Now you should deploy with `npm run full-dev` (or `full-prod`).
+
+- Install AWS-CLI. See https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+- If you are using VSCode it is probably a good idea to install the AWS Toolkit for VSCode. See: https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/setup-toolkit.html
+- Make sure you have your AWS credentials "installed". See: https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/setup-credentials.html
+- Use the profile names AbstractPlayDev and AbstractPlayProd.
+- Make sure serverless is installed: `npm install -g serverless`
+- For the very first deployment (in order to set up the S3 bucket and the CloudFront distribution), run `serverless deploy` and
+  `serverless --stage prod deploy`
+- Now find the distribution ids (e.g. through the AWS console > CloudFront) and copy to the invalidate and invalidate-prod npm scripts in package.json.
+- Now you should deploy with `npm run full-dev` (or `full-prod`).
