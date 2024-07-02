@@ -13,6 +13,6 @@ export const api = createApi({
 				responseHandler: 'json'
 			}),
 			providesTags: ['Users']
-		})
+		}),
 	})
 });
