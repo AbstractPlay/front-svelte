@@ -1,4 +1,4 @@
-import type { RootState, StatusType } from '$lib/store';
+import type { StatusType } from '$lib/store';
 import type { Player } from './meSlice';
 import { createSlice } from '@reduxjs/toolkit';
 import { api } from '$lib/api';
@@ -59,7 +59,7 @@ export type Comment = {
     timeStamp: number;
 }
 
-export interface GameState {
+export type GameState = {
 	data?: FullGame;
     comments?: Comment[];
 	status: StatusType;
@@ -101,9 +101,5 @@ export const gameSlice = createSlice({
 // Action creators are generated for each case reducer function
 // export const {  } = usersSlice.actions
 
-export default usersSlice.reducer;
+export default gameSlice.reducer;
 
-export const selectAllUsers = (state: RootState) => state.users.data;
-
-export const selectUserById = (state: RootState, uid: string) =>
-	state.users.data.find((u) => u.id === uid);

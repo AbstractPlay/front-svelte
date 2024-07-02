@@ -71,7 +71,7 @@ export type Player = {
     mayPush?: boolean;
 }
 
-export interface GameState {
+export type GameState = {
 	data?: FullGame;
 	status: StatusType;
 	error: string | null;

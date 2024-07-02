@@ -6,8 +6,8 @@ export const getToken = async (): Promise<string|null> => {
     try {
         const session = await fetchAuthSession();
         console.log(`Session:`, session);
-        if (session !== undefined && session.tokens !== undefined) {
-            token = session.tokens.accessToken.toString();
+        if (session !== undefined && session.tokens !== undefined && session.tokens.idToken !== undefined) {
+            token = session.tokens.idToken.toString();
         }
     } catch (err) {
         // don't do anything if not logged in

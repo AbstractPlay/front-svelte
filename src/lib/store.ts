@@ -2,12 +2,13 @@ import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { api } from './api';
 import { Hub } from "aws-amplify/utils";
-import { fetchAuthSession } from 'aws-amplify/auth';
 import throttle from "lodash/throttle";
 import usersReducer from './store/usersSlice';
 import localSettingsReducer from "./store/localSettingsSlice";
 import authReducer from "./store/authSlice";
 import { setToken } from './store/authSlice';
+import gameReducer from "./store/gameSlice";
+import { getToken } from './auth';
 
 export type StatusType = 'idle' | 'loading' | 'succeeded' | 'failed';
 
@@ -15,6 +16,7 @@ export const store = configureStore({
 	reducer: {
         auth: authReducer,
 		users: usersReducer,
+        game: gameReducer,
         localSettings: localSettingsReducer,
 		[api.reducerPath]: api.reducer
 	},
@@ -59,27 +61,17 @@ store.subscribe(throttle(() => {
 // }
 
 // Keep tabs on AWS-Amplify state
-// Hub.listen("auth", async (data) => {
-//     const { payload } = data;
-//     console.log(`Received an Amplify event:`, payload);
-//     let token: string|null = null;
-//     try {
-//         const session = await fetchAuthSession();
-//         console.log(`Session:`, session);
-//         if (session !== undefined && session.tokens !== undefined) {
-//             token = session.tokens.accessToken.toString();
-//         }
-//     } catch {
-//         // don't do anything if not logged in
-//         console.log(`Could not get an authorized session`);
-//     }
-//     if (token !== null) {
-//         console.log(`Setting token`);
-//         store.dispatch(setToken(token));
-//     } else {
-//         console.log(`Unsetting token`)
-//         store.dispatch(setToken(undefined));
-//     }
-// });
+Hub.listen("auth", async (data) => {
+    const { payload } = data;
+    console.log(`Received an Amplify event:`, payload);
+    const token = await getToken();
+    if (token !== null) {
+        console.log(`Setting token`);
+        store.dispatch(setToken(token));
+    } else {
+        console.log(`Unsetting token`)
+        store.dispatch(setToken(undefined));
+    }
+});
 
 export default store;

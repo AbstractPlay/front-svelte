@@ -1,8 +1,22 @@
 // import { error } from '@sveltejs/kit';
-// import { api } from '$lib/api.js';
+import { api } from '$lib/api.js';
+import { getCurrentUser, type AuthUser } from 'aws-amplify/auth';
 
-// export async function load({ params, parent }) {
-//     // const { store } = await parent();
-//     // console.log(JSON.stringify(params));
-//     // console.log(JSON.stringify(store.getState()));
-// }
+export async function load({ params, parent }) {
+    const { store } = await parent();
+    let user: AuthUser|undefined;
+    try {
+        user = await getCurrentUser();
+    } catch {
+        // no need to catch
+    }
+    let loggedin = false;
+    if (user !== undefined) {
+        loggedin = true;
+    }
+	if (store.getState().game.status === 'idle') {
+        const opts = {loggedin, metaGame: params.metaGame, cbit: parseInt(params.cbit, 10) as 0|1, id: params.gameId};
+        console.log(`Passing the following parameters: ${JSON.stringify(opts)}`);
+		store.dispatch(api.endpoints.getGame.initiate({loggedin, metaGame: params.metaGame, cbit: parseInt(params.cbit, 10) as 0|1, id: params.gameId}));
+	}
+}
