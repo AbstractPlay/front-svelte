@@ -15,8 +15,6 @@ export async function load({ params, parent }) {
         loggedin = true;
     }
 	if (store.getState().game.status === 'idle') {
-        const opts = {loggedin, metaGame: params.metaGame, cbit: parseInt(params.cbit, 10) as 0|1, id: params.gameId};
-        console.log(`Passing the following parameters: ${JSON.stringify(opts)}`);
 		store.dispatch(api.endpoints.getGame.initiate({loggedin, metaGame: params.metaGame, cbit: parseInt(params.cbit, 10) as 0|1, id: params.gameId}));
 	}
 }

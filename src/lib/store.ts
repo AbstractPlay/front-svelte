@@ -43,33 +43,12 @@ store.subscribe(throttle(() => {
     }
 }, 1000));
 
-// const handleTokenRefresh = async () => {
-//     let token: string|null = null;
-//     try {
-//         const user = await Auth.currentAuthenticatedUser();
-//         token = user.signInUserSession.idToken.jwtToken;
-//     } catch {
-//         // don't need to do anything if not logged in
-//     }
-//     if (token !== null) {
-//         console.log(`Setting token`);
-//         store.dispatch(setToken(token));
-//     } else {
-//         console.log(`Unsetting token`)
-//         store.dispatch(setToken(undefined));
-//     }
-// }
-
 // Keep tabs on AWS-Amplify state
-Hub.listen("auth", async (data) => {
-    const { payload } = data;
-    console.log(`Received an Amplify event:`, payload);
+Hub.listen("auth", async () => {
     const token = await getToken();
     if (token !== null) {
-        console.log(`Setting token`);
         store.dispatch(setToken(token));
     } else {
-        console.log(`Unsetting token`)
         store.dispatch(setToken(undefined));
     }
 });

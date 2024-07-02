@@ -59,7 +59,6 @@ export const api = createApi({
 				responseHandler: "json",
             }),
             transformResponse: (response: APPostResponse|GetGameResult) => {
-                console.log(`RESPONSE`, response);
                 // eslint-disable-next-line no-prototype-builtins
                 if (response.hasOwnProperty("game") && response.hasOwnProperty("comments")) {
                     return response;
