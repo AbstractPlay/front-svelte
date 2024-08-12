@@ -1,6 +1,6 @@
 # Abstract Play Front-End Client (SvelteKit Rewrite)
 
-This is an in-progress repo. This is intended for local testing only!
+This is an in-progress repo. This is intended for local testing only! To test locally, clone, run `npm i`, and then `npm run dev`.
 
 ## Goals
 
@@ -15,4 +15,3 @@ This is an in-progress repo. This is intended for local testing only!
 - [x] Layout and CSS styling
 - [ ] State management: Basics work as expected, but still more to do
 - [ ] Game play page
-

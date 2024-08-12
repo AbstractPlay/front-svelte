@@ -2,27 +2,27 @@
 	import type { GameState } from '@/lib/store/gameSlice';
 	import { afterUpdate, onMount } from 'svelte';
 
-    export let data;
+	export let data;
 
-    let unsubscribe;
-    let dbGame: GameState;
-    onMount(() => {
+	let unsubscribe;
+	let dbGame: GameState;
+	onMount(() => {
 		unsubscribe = data.store.subscribe(() => {
 			dbGame = data.store.getState().game;
 		});
 		return unsubscribe;
-    });
-    afterUpdate(() => {
-        dbGame;
-    });
+	});
+	afterUpdate(() => {
+		dbGame;
+	});
 </script>
 
-{#if dbGame === undefined || dbGame.status === "loading" || dbGame.status === "idle"}
-    <p>Loading...</p>
-{:else if dbGame.status === "failed"}
-    <p>Could not load the requested game.</p>
+{#if dbGame === undefined || dbGame.status === 'loading' || dbGame.status === 'idle'}
+	<p>Loading...</p>
+{:else if dbGame.status === 'failed'}
+	<p>Could not load the requested game.</p>
 {:else}
-    <pre>
+	<pre>
 {JSON.stringify(dbGame, null, 2)}
     </pre>
 {/if}

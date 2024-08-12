@@ -4,67 +4,67 @@ import { createSlice } from '@reduxjs/toolkit';
 import { api } from '$lib/api';
 
 export type AbbrevGame = {
-    pk?: string,
-    sk?: string,
-    id : string;
-    metaGame: string;
-    players: Player[];
-    lastMoveTime: number;
-    clockHard: boolean;
-    noExplore?: boolean;
-    toMove: string | boolean[];
-    note?: string;
-    seen?: number;
-    winner?: number[];
-    numMoves?: number;
-    gameStarted?: number;
-    gameEnded?: number;
-    lastChat?: number;
-    variants?: string[];
-}
+	pk?: string;
+	sk?: string;
+	id: string;
+	metaGame: string;
+	players: Player[];
+	lastMoveTime: number;
+	clockHard: boolean;
+	noExplore?: boolean;
+	toMove: string | boolean[];
+	note?: string;
+	seen?: number;
+	winner?: number[];
+	numMoves?: number;
+	gameStarted?: number;
+	gameEnded?: number;
+	lastChat?: number;
+	variants?: string[];
+};
 
 export type FullGame = {
-    pk: string;
-    sk: string;
-    id: string;
-    clockHard: boolean;
-    clockInc: number;
-    clockMax: number;
-    clockStart: number;
-    gameStarted: number;
-    gameEnded?: number;
-    lastMoveTime: number;
-    metaGame: string;
-    numPlayers: number;
-    players: Player[];
-    state: string;
-    note?: string;
-    toMove: string | boolean[];
-    partialMove?: string;
-    winner?: number[];
-    numMoves?: number;
-    rated?: boolean;
-    pieInvoked?: boolean;
-    variants?: string[];
-    published?: string[];
-    tournament?: string;
-    division?: number;
-    noExplore?: boolean;
-}
+	pk: string;
+	sk: string;
+	id: string;
+	clockHard: boolean;
+	clockInc: number;
+	clockMax: number;
+	clockStart: number;
+	gameStarted: number;
+	gameEnded?: number;
+	lastMoveTime: number;
+	metaGame: string;
+	numPlayers: number;
+	players: Player[];
+	state: string;
+	note?: string;
+	toMove: string | boolean[];
+	partialMove?: string;
+	winner?: number[];
+	numMoves?: number;
+	rated?: boolean;
+	pieInvoked?: boolean;
+	variants?: string[];
+	published?: string[];
+	tournament?: string;
+	division?: number;
+	noExplore?: boolean;
+};
 
 export type Comment = {
-    comment: string;
-    userId: string;
-    moveNumber: number;
-    timeStamp: number;
-}
+	comment: string;
+	userId: string;
+	moveNumber: number;
+	timeStamp: number;
+};
 
 export type GameState = {
 	data?: FullGame;
-    comments?: Comment[];
+	comments?: Comment[];
 	status: StatusType;
 	error: string | null;
-}
+};
 
 const initialState: GameState = {
 	status: 'idle',
@@ -79,13 +79,13 @@ export const gameSlice = createSlice({
 		builder
 			.addMatcher(api.endpoints.getGame.matchPending, (state) => {
 				state.data = undefined;
-                state.comments = undefined;
+				state.comments = undefined;
 				state.status = 'loading';
 				state.error = null;
 			})
 			.addMatcher(api.endpoints.getGame.matchRejected, (state, { error }) => {
 				state.data = undefined;
-                state.comments = undefined;
+				state.comments = undefined;
 				state.status = 'failed';
 				state.error = error.message!;
 			})
@@ -102,4 +102,3 @@ export const gameSlice = createSlice({
 // export const {  } = usersSlice.actions
 
 export default gameSlice.reducer;
-
