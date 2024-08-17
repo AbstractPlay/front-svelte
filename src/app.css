@@ -1,12 +1,12 @@
 /* Overall font definitions */
-@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Josefin+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Josefin+Sans&display=swap");
 /* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+Pro&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Quattrocento&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Proza+Libre&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Fauna+One&display=swap'); */
 
 /* Colour definitions */
-:root[color-mode='light'] {
+:root[color-mode="light"] {
 	--main-bg-color: white;
 	--main-font-color: black;
 	--secondary-font-color: #333;
@@ -35,7 +35,7 @@
 	/* --secondary-color-2-lighter: #e6f2f2; */
 }
 
-:root[color-mode='dark'] {
+:root[color-mode="dark"] {
 	--main-bg-color: #222;
 	--main-font-color: #e6f2f2;
 	--secondary-font-color: #c3d6f1;
@@ -60,12 +60,12 @@
 }
 
 /* Any element with the class "light--hidden" will be hidden when the site is set to Light Mode */
-:root[color-mode='light'] .light--hidden {
+:root[color-mode="light"] .light--hidden {
 	display: none;
 }
 
 /* Any element with the class "dark--hidden" will be hidden when the site is set to Dark Mode */
-:root[color-mode='dark'] .dark--hidden {
+:root[color-mode="dark"] .dark--hidden {
 	display: none;
 }
 
@@ -75,7 +75,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Cardo', serif;
+	font-family: "Cardo", serif;
 }
 
 html,
@@ -84,7 +84,7 @@ button,
 input,
 select,
 textarea {
-	font-family: 'Josefin Sans', sans-serif;
+	font-family: "Josefin Sans", sans-serif;
 	font-size: 1em;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -176,11 +176,11 @@ a.navbar-item,
 	background-color: var(--tag-background-color);
 }
 
-:root[color-mode='dark'] a.navbar-burger {
+:root[color-mode="dark"] a.navbar-burger {
 	color: var(--main-font-color);
 }
 
-:root[color-mode='dark'] a.navbar-burger:hover {
+:root[color-mode="dark"] a.navbar-burger:hover {
 	color: var(--secondary-font-color);
 }
 
@@ -200,8 +200,8 @@ a.navbar-item,
 }
 
 /* Add a little bit of space after checkboxes and radio buttons */
-input[type='checkbox'],
-input[type='radio'] {
+input[type="checkbox"],
+input[type="radio"] {
 	margin-right: 0.25em;
 }
 
@@ -321,7 +321,7 @@ strong {
 
 .lined:before {
 	border-top: 2px solid var(--main-fg-color);
-	content: '';
+	content: "";
 	position: absolute;
 	top: 12px;
 	left: 0;
@@ -779,7 +779,7 @@ tr.stickyHeader {
 	position: relative;
 	padding-right: 5px;
 	display: inline;
-	content: '\002709';
+	content: "\002709";
 	color: var(--secondary-color-1);
 }
 
@@ -892,7 +892,7 @@ tr.stickyHeader {
 	border-radius: 2px;
 }
 .flag.border::before {
-	content: '';
+	content: "";
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -903,7 +903,7 @@ tr.stickyHeader {
 	mix-blend-mode: overlay;
 }
 .flag.top-down::before {
-	content: '';
+	content: "";
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -913,7 +913,7 @@ tr.stickyHeader {
 	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 2%, rgba(255, 255, 255, 0.7) 100%);
 }
 .flag.real-linear::before {
-	content: '';
+	content: "";
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -933,7 +933,7 @@ tr.stickyHeader {
 	);
 }
 .flag.real-circular::before {
-	content: '';
+	content: "";
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -990,7 +990,7 @@ tr.stickyHeader {
   } */
 
 /* Volcano caps */
-symbol#aprender-glyph-389d5741cdfe1 [data-playerstroke='true'] {
+symbol#aprender-glyph-389d5741cdfe1 [data-playerstroke="true"] {
 	stroke: var(--svg-volcano-caps);
 }
 
@@ -1000,9 +1000,9 @@ div._meta_mattock polygon.aprender-marker-f47325856bcb8 {
 }
 
 /* Alfred's Wyke button bar fill inversion in dark mode */
-:root[color-mode='dark'] svg#_btnBar symbol.aprender-button-a697952a21593 > rect {
+:root[color-mode="dark"] svg#_btnBar symbol.aprender-button-a697952a21593 > rect {
 	fill: #dddddd;
 }
-:root[color-mode='dark'] svg#_btnBar symbol.aprender-button-0ca07818d5ffc > rect {
+:root[color-mode="dark"] svg#_btnBar symbol.aprender-button-0ca07818d5ffc > rect {
 	fill: #999999;
 }

@@ -1,7 +1,6 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query';
-import type { UserData } from './store/usersSlice';
-import type { Comment, FullGame } from './store/gameSlice';
-import { getToken } from './auth';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query";
+import { getToken } from "./auth";
+import type { FullGame, UserData, Comment } from "./types/backend";
 
 type APPostResponse = {
 	statusCode: number;
@@ -15,28 +14,28 @@ type GetGameResult = {
 };
 
 export const api = createApi({
-	reducerPath: 'api',
+	reducerPath: "api",
 	baseQuery: fetchBaseQuery({
 		baseUrl: import.meta.env.VITE_API_ENDPOINT,
 		prepareHeaders: async (headers) => {
 			const token = await getToken();
-			headers.set('Accept', 'application/json');
-			headers.set('Content-Type', 'application/json');
+			headers.set("Accept", "application/json");
+			headers.set("Content-Type", "application/json");
 			if (token !== null) {
-				headers.set('Authorization', `Bearer ${token}`);
+				headers.set("Authorization", `Bearer ${token}`);
 			}
 			return headers;
 		}
 	}),
-	tagTypes: ['Users', 'Game'],
+	tagTypes: ["Users", "Game"],
 	endpoints: (builder) => ({
 		getUsers: builder.query<UserData[], void>({
 			query: () => ({
 				url: import.meta.env.VITE_API_OPEN,
-				params: { query: 'user_names' },
-				responseHandler: 'json'
+				params: { query: "user_names" },
+				responseHandler: "json"
 			}),
-			providesTags: ['Users']
+			providesTags: ["Users"]
 		}),
 		getGame: builder.query<
 			GetGameResult,
@@ -45,7 +44,7 @@ export const api = createApi({
 			query: ({ loggedin, metaGame, cbit, id }) => ({
 				url: loggedin ? import.meta.env.VITE_API_AUTH : import.meta.env.VITE_API_OPEN,
 				params: {
-					query: loggedin ? undefined : 'get_game',
+					query: loggedin ? undefined : "get_game",
 					id: loggedin ? undefined : id,
 					metaGame: loggedin ? undefined : metaGame,
 					cbit: loggedin ? undefined : cbit
@@ -53,19 +52,19 @@ export const api = createApi({
 				body: !loggedin
 					? undefined
 					: {
-							query: 'get_game',
+							query: "get_game",
 							pars: {
 								id,
 								metaGame,
 								cbit
 							}
 						},
-				method: loggedin ? 'POST' : 'GET',
-				responseHandler: 'json'
+				method: loggedin ? "POST" : "GET",
+				responseHandler: "json"
 			}),
 			transformResponse: (response: APPostResponse | GetGameResult) => {
 				// eslint-disable-next-line no-prototype-builtins
-				if (response.hasOwnProperty('game') && response.hasOwnProperty('comments')) {
+				if (response.hasOwnProperty("game") && response.hasOwnProperty("comments")) {
 					return response;
 				} else {
 					response = response as APPostResponse;
@@ -76,7 +75,7 @@ export const api = createApi({
 					}
 				}
 			},
-			providesTags: ['Game']
+			providesTags: ["Game"]
 		})
 	})
 });

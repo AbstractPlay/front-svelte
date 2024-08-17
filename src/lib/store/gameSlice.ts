@@ -1,98 +1,42 @@
-import type { StatusType } from '$lib/store';
-import type { Player } from './meSlice';
-import { createSlice } from '@reduxjs/toolkit';
-import { api } from '$lib/api';
-
-export type AbbrevGame = {
-	pk?: string;
-	sk?: string;
-	id: string;
-	metaGame: string;
-	players: Player[];
-	lastMoveTime: number;
-	clockHard: boolean;
-	noExplore?: boolean;
-	toMove: string | boolean[];
-	note?: string;
-	seen?: number;
-	winner?: number[];
-	numMoves?: number;
-	gameStarted?: number;
-	gameEnded?: number;
-	lastChat?: number;
-	variants?: string[];
-};
-
-export type FullGame = {
-	pk: string;
-	sk: string;
-	id: string;
-	clockHard: boolean;
-	clockInc: number;
-	clockMax: number;
-	clockStart: number;
-	gameStarted: number;
-	gameEnded?: number;
-	lastMoveTime: number;
-	metaGame: string;
-	numPlayers: number;
-	players: Player[];
-	state: string;
-	note?: string;
-	toMove: string | boolean[];
-	partialMove?: string;
-	winner?: number[];
-	numMoves?: number;
-	rated?: boolean;
-	pieInvoked?: boolean;
-	variants?: string[];
-	published?: string[];
-	tournament?: string;
-	division?: number;
-	noExplore?: boolean;
-};
-
-export type Comment = {
-	comment: string;
-	userId: string;
-	moveNumber: number;
-	timeStamp: number;
-};
+import type { StatusType } from "$lib/store";
+import { createSlice } from "@reduxjs/toolkit";
+import { api } from "$lib/api";
+import type { FullGame, Comment } from "../types/backend";
 
 export type GameState = {
 	data?: FullGame;
-	comments?: Comment[];
+	gameComments?: Comment[];
 	status: StatusType;
 	error: string | null;
 };
 
 const initialState: GameState = {
-	status: 'idle',
+	status: "idle",
 	error: null
 };
 
 export const gameSlice = createSlice({
-	name: 'game',
+	name: "game",
 	initialState,
 	reducers: {},
 	extraReducers: (builder) => {
 		builder
 			.addMatcher(api.endpoints.getGame.matchPending, (state) => {
 				state.data = undefined;
-				state.comments = undefined;
-				state.status = 'loading';
+				state.gameComments = undefined;
+				state.status = "loading";
 				state.error = null;
 			})
 			.addMatcher(api.endpoints.getGame.matchRejected, (state, { error }) => {
 				state.data = undefined;
-				state.comments = undefined;
-				state.status = 'failed';
+				state.gameComments = undefined;
+				state.status = "failed";
 				state.error = error.message!;
 			})
 			.addMatcher(api.endpoints.getGame.matchFulfilled, (state, { payload }) => {
 				state.data = payload.game;
-				state.comments = payload.comments;
-				state.status = 'succeeded';
+				state.gameComments = payload.comments;
+				state.status = "succeeded";
 				state.error = null;
 			});
 	}

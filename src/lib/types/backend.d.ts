@@ -39,9 +39,9 @@ type FullChallenge = {
 };
 
 export type UserSettings = {
-	[k: string]: any;
+	[k: string]: unknown;
 	all?: {
-		[k: string]: any;
+		[k: string]: unknown;
 		color?: string;
 		annotate?: boolean;
 		notifications?: {
@@ -94,6 +94,14 @@ type FullUser = {
 	tags?: TagList[];
 	palettes?: Palette[];
 	mayPush?: boolean;
+};
+
+export type UserData = {
+	id: string;
+	name: string;
+	country: string;
+	lastseen: number;
+	stars: string[];
 };
 
 type Rating = {
@@ -162,7 +170,7 @@ type FullGame = {
 };
 
 type Playground = {
-	pk: 'PLAYGROUND';
+	pk: "PLAYGROUND";
 	sk: string;
 	metaGame: string;
 	state: string;
@@ -178,14 +186,14 @@ type Comment = {
 type PushCredentials = {
 	pk: string;
 	sk: string;
-	payload: any;
+	payload: unknown;
 };
 
 type PushOptions = {
 	userId: string;
 	title: string;
 	body: string;
-	topic: 'yourturn' | 'ended' | 'started' | 'challenges' | 'test' | 'tournament';
+	topic: "yourturn" | "ended" | "started" | "challenges" | "test" | "tournament";
 	url?: string; //relative url of target page, if appropriate
 };
 
@@ -248,7 +256,7 @@ type TournamentGame = {
 };
 
 type OrgEvent = {
-	pk: 'ORGEVENT';
+	pk: "ORGEVENT";
 	sk: string; // <eventid>
 	name: string;
 	description: string;
@@ -260,7 +268,7 @@ type OrgEvent = {
 };
 
 type OrgEventGame = {
-	pk: 'ORGEVENTGAME';
+	pk: "ORGEVENTGAME";
 	sk: string; // <eventid>#<gameid>
 	metaGame: string;
 	variants?: string[];
@@ -273,7 +281,7 @@ type OrgEventGame = {
 };
 
 type OrgEventPlayer = {
-	pk: 'ORGEVENTPLAYER';
+	pk: "ORGEVENTPLAYER";
 	sk: string; // <eventid>#<playerid>
 	playerid: string;
 	seed?: number;
@@ -285,7 +293,7 @@ type TagList = {
 };
 
 type TagRec = {
-	pk: 'TAG';
+	pk: "TAG";
 	sk: string;
 	tags: TagList[];
 };
@@ -296,7 +304,7 @@ type Palette = {
 };
 
 type PaletteRec = {
-	pk: 'PALETTES';
+	pk: "PALETTES";
 	sk: string;
 	palettes: Palette[];
 };

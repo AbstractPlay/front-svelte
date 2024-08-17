@@ -1,6 +1,6 @@
 // import { error } from '@sveltejs/kit';
-import { api } from '$lib/api.js';
-import { getCurrentUser, type AuthUser } from 'aws-amplify/auth';
+import { api } from "$lib/api.js";
+import { getCurrentUser, type AuthUser } from "aws-amplify/auth";
 
 export async function load({ params, parent }) {
 	const { store } = await parent();
@@ -14,7 +14,7 @@ export async function load({ params, parent }) {
 	if (user !== undefined) {
 		loggedin = true;
 	}
-	if (store.getState().game.status === 'idle') {
+	if (store.getState().game.status === "idle") {
 		store.dispatch(
 			api.endpoints.getGame.initiate({
 				loggedin,

@@ -72,7 +72,7 @@ resources:
           Statement:
             - Sid: PublicReadGetObject
               Effect: Allow
-              Principal: '*'
+              Principal: "*"
               Action:
                 - s3:GetObject
               Resource: arn:aws:s3:::${self:custom.s3Bucket}/*
@@ -81,7 +81,7 @@ resources:
       Type: AWS::CloudFront::Distribution
       Properties:
         DistributionConfig:
-          PriceClass: 'PriceClass_100'
+          PriceClass: "PriceClass_100"
           Origins:
             - DomainName: ${self:custom.s3Bucket}.s3.amazonaws.com
               ## An identifier for the origin which must be unique within the distribution
@@ -93,7 +93,7 @@ resources:
               ## In case you want to restrict the bucket access use S3OriginConfig and remove CustomOriginConfig
               # S3OriginConfig:
               #   OriginAccessIdentity: origin-access-identity/cloudfront/E127EXAMPLE51Z
-          Enabled: 'true'
+          Enabled: "true"
           ## Uncomment the following section in case you are using a custom domain
           Aliases:
             - ${param:url}
@@ -117,7 +117,7 @@ resources:
             TargetOriginId: WebApp
             ## Defining if and how the QueryString and Cookies are forwarded to the origin which in this case is S3
             ForwardedValues:
-              QueryString: 'false'
+              QueryString: "false"
               Cookies:
                 Forward: none
             ## The protocol that users can use to access the files in the origin. To allow HTTP use `allow-all`
@@ -125,8 +125,8 @@ resources:
           ## The certificate to use when viewers use HTTPS to request objects.
           ViewerCertificate:
             AcmCertificateArn: arn:aws:acm:us-east-1:153672715141:certificate/0138b8fd-1159-4928-a072-2eb1c999f53c
-            SslSupportMethod: 'sni-only'
-            MinimumProtocolVersion: 'TLSv1.1_2016'
+            SslSupportMethod: "sni-only"
+            MinimumProtocolVersion: "TLSv1.1_2016"
           #            CloudFrontDefaultCertificate: 'true'
           ## Uncomment the following section in case you want to enable logging for CloudFront requests
           # Logging:
@@ -138,7 +138,7 @@ resources:
   Outputs:
     WebAppS3BucketOutput:
       Value:
-        'Ref': WebAppS3Bucket
+        "Ref": WebAppS3Bucket
     WebAppCloudFrontDistributionOutput:
       Value:
-        'Fn::GetAtt': [WebAppCloudFrontDistribution, DomainName]
+        "Fn::GetAtt": [WebAppCloudFrontDistribution, DomainName]

@@ -1,14 +1,7 @@
-import type { RootState, StatusType } from '$lib/store';
-import { createSlice } from '@reduxjs/toolkit';
-import { api } from '$lib/api';
-
-export type UserData = {
-	id: string;
-	name: string;
-	country: string;
-	lastseen: number;
-	stars: string[];
-};
+import type { RootState, StatusType } from "$lib/store";
+import { createSlice } from "@reduxjs/toolkit";
+import { api } from "$lib/api";
+import type { UserData } from "../types/backend";
 
 export interface UsersState {
 	data: UserData[];
@@ -18,29 +11,29 @@ export interface UsersState {
 
 const initialState: UsersState = {
 	data: [],
-	status: 'idle',
+	status: "idle",
 	error: null
 };
 
 export const usersSlice = createSlice({
-	name: 'users',
+	name: "users",
 	initialState,
 	reducers: {},
 	extraReducers: (builder) => {
 		builder
 			.addMatcher(api.endpoints.getUsers.matchPending, (state) => {
 				state.data = [];
-				state.status = 'loading';
+				state.status = "loading";
 				state.error = null;
 			})
 			.addMatcher(api.endpoints.getUsers.matchRejected, (state, { error }) => {
 				state.data = [];
-				state.status = 'failed';
+				state.status = "failed";
 				state.error = error.message!;
 			})
 			.addMatcher(api.endpoints.getUsers.matchFulfilled, (state, { payload }) => {
 				state.data = payload;
-				state.status = 'succeeded';
+				state.status = "succeeded";
 				state.error = null;
 			});
 	}

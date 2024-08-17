@@ -1,16 +1,16 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { setupListeners } from '@reduxjs/toolkit/query';
-import { api } from './api';
-import { Hub } from 'aws-amplify/utils';
-import throttle from 'lodash/throttle';
-import usersReducer from './store/usersSlice';
-import localSettingsReducer from './store/localSettingsSlice';
-import authReducer from './store/authSlice';
-import { setToken } from './store/authSlice';
-import gameReducer from './store/gameSlice';
-import { getToken } from './auth';
+import { configureStore } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
+import { api } from "./api";
+import { Hub } from "aws-amplify/utils";
+import throttle from "lodash/throttle";
+import usersReducer from "./store/usersSlice";
+import localSettingsReducer from "./store/localSettingsSlice";
+import authReducer from "./store/authSlice";
+import { setToken } from "./store/authSlice";
+import gameReducer from "./store/gameSlice";
+import { getToken } from "./auth";
 
-export type StatusType = 'idle' | 'loading' | 'succeeded' | 'failed';
+export type StatusType = "idle" | "loading" | "succeeded" | "failed";
 
 export const store = configureStore({
 	reducer: {
@@ -26,9 +26,9 @@ export const store = configureStore({
 // Get the type of our store variable
 export type AppStore = typeof store;
 // Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<AppStore['getState']>;
+export type RootState = ReturnType<AppStore["getState"]>;
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = AppStore['dispatch'];
+export type AppDispatch = AppStore["dispatch"];
 
 setupListeners(store.dispatch);
 
@@ -38,7 +38,7 @@ store.subscribe(
 		const settings = store.getState().localSettings;
 		try {
 			const serializedState = JSON.stringify(settings);
-			localStorage.setItem('localSettings', serializedState);
+			localStorage.setItem("localSettings", serializedState);
 		} catch {
 			// ignore write errors
 		}
@@ -46,7 +46,7 @@ store.subscribe(
 );
 
 // Keep tabs on AWS-Amplify state
-Hub.listen('auth', async () => {
+Hub.listen("auth", async () => {
 	const token = await getToken();
 	if (token !== null) {
 		store.dispatch(setToken(token));

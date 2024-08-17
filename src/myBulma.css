@@ -4920,7 +4920,7 @@
 		--bulma-shadow-l: 100%;
 	}
 }
-[data-theme='light'],
+[data-theme="light"],
 .theme-light {
 	--bulma-scheme-h: 221;
 	--bulma-scheme-s: 14%;
@@ -7347,7 +7347,7 @@
 		0 0px 0 1px hsla(var(--bulma-shadow-h), var(--bulma-shadow-s), var(--bulma-shadow-l), 0.02);
 }
 
-[data-theme='dark'],
+[data-theme="dark"],
 .theme-dark {
 	--bulma-white-on-scheme-l: 100%;
 	--bulma-white-on-scheme: hsla(
@@ -7760,8 +7760,8 @@ img {
 	max-width: 100%;
 }
 
-input[type='checkbox'],
-input[type='radio'] {
+input[type="checkbox"],
+input[type="radio"] {
 	vertical-align: baseline;
 }
 
@@ -7836,7 +7836,7 @@ table th {
 	border: 0.125em solid var(--bulma-arrow-color);
 	border-right: 0;
 	border-top: 0;
-	content: ' ';
+	content: " ";
 	display: block;
 	height: 0.625em;
 	margin-top: -0.4375em;
@@ -8026,7 +8026,7 @@ fieldset[disabled] .button {
 .modal-close::before,
 .modal-close::after {
 	background-color: var(--bulma-delete-color);
-	content: '';
+	content: "";
 	display: block;
 	left: 50%;
 	position: absolute;
@@ -8067,7 +8067,7 @@ fieldset[disabled] .button {
 	border-radius: var(--bulma-radius-rounded);
 	border-right-color: transparent;
 	border-top-color: transparent;
-	content: '';
+	content: "";
 	display: block;
 	height: 1em;
 	position: relative;
@@ -9069,7 +9069,7 @@ fieldset[disabled] .button.is-text {
 .delete::before,
 .delete::after {
 	background-color: var(--bulma-delete-color);
-	content: '';
+	content: "";
 	display: block;
 	left: 50%;
 	position: absolute;
@@ -9410,7 +9410,7 @@ div.icon-text {
 	border-radius: var(--bulma-radius-rounded);
 	border-right-color: transparent;
 	border-top-color: transparent;
-	content: '';
+	content: "";
 	display: block;
 	height: 1em;
 	position: relative;
@@ -10207,7 +10207,7 @@ div.icon-text {
 .tag.is-delete::before,
 .tag.is-delete::after {
 	background-color: currentColor;
-	content: '';
+	content: "";
 	display: block;
 	left: 50%;
 	position: absolute;
@@ -11562,7 +11562,7 @@ fieldset[disabled] .select select:hover {
 }
 .breadcrumb li + li::before {
 	color: var(--bulma-breadcrumb-item-separator-color);
-	content: '/';
+	content: "/";
 }
 .breadcrumb ul,
 .breadcrumb ol {
@@ -11595,16 +11595,16 @@ fieldset[disabled] .select select:hover {
 	font-size: var(--bulma-size-large);
 }
 .breadcrumb.has-arrow-separator li + li::before {
-	content: '→';
+	content: "→";
 }
 .breadcrumb.has-bullet-separator li + li::before {
-	content: '•';
+	content: "•";
 }
 .breadcrumb.has-dot-separator li + li::before {
-	content: '·';
+	content: "·";
 }
 .breadcrumb.has-succeeds-separator li + li::before {
-	content: '≻';
+	content: "≻";
 }
 
 .card {
@@ -13499,7 +13499,7 @@ a.navbar-item.is-selected,
 	justify-content: flex-start;
 	padding: 0.75em 1em;
 }
-.panel-block input[type='checkbox'] {
+.panel-block input[type="checkbox"] {
 	margin-inline-end: 0.75em;
 }
 .panel-block > .control {
@@ -19486,7 +19486,7 @@ textarea.is-skeleton:-ms-input-placeholder {
 	position: relative;
 }
 .has-skeleton::after {
-	content: '';
+	content: "";
 	display: block;
 	height: 100%;
 	left: 0;
@@ -19598,8 +19598,8 @@ textarea.is-skeleton:-ms-input-placeholder {
 	background-color: var(--bulma-background);
 }
 
-[class*='is-color-white'],
-[class*='has-text-white'] {
+[class*="is-color-white"],
+[class*="has-text-white"] {
 	--bulma-color-l: var(--bulma-white-l);
 	--bulma-color-l-delta: 0%;
 	color: hsl(
@@ -19609,8 +19609,8 @@ textarea.is-skeleton:-ms-input-placeholder {
 	) !important;
 }
 
-[class*='is-background-white'],
-[class*='has-background-white'] {
+[class*="is-background-white"],
+[class*="has-background-white"] {
 	--bulma-background-l: var(--bulma-white-l);
 	--bulma-background-l-delta: 0%;
 	background-color: hsl(
@@ -20235,8 +20235,8 @@ has-background-white.is-hoverable:active {
 	--color-100: hsl(var(--h), var(--s), var(--100-l));
 }
 
-[class*='is-color-black'],
-[class*='has-text-black'] {
+[class*="is-color-black"],
+[class*="has-text-black"] {
 	--bulma-color-l: var(--bulma-black-l);
 	--bulma-color-l-delta: 0%;
 	color: hsl(
@@ -20246,8 +20246,8 @@ has-background-white.is-hoverable:active {
 	) !important;
 }
 
-[class*='is-background-black'],
-[class*='has-background-black'] {
+[class*="is-background-black"],
+[class*="has-background-black"] {
 	--bulma-background-l: var(--bulma-black-l);
 	--bulma-background-l-delta: 0%;
 	background-color: hsl(
@@ -20872,8 +20872,8 @@ has-background-black.is-hoverable:active {
 	--color-100: hsl(var(--h), var(--s), var(--100-l));
 }
 
-[class*='is-color-light'],
-[class*='has-text-light'] {
+[class*="is-color-light"],
+[class*="has-text-light"] {
 	--bulma-color-l: var(--bulma-light-l);
 	--bulma-color-l-delta: 0%;
 	color: hsl(
@@ -20883,8 +20883,8 @@ has-background-black.is-hoverable:active {
 	) !important;
 }
 
-[class*='is-background-light'],
-[class*='has-background-light'] {
+[class*="is-background-light"],
+[class*="has-background-light"] {
 	--bulma-background-l: var(--bulma-light-l);
 	--bulma-background-l-delta: 0%;
 	background-color: hsl(
@@ -21509,8 +21509,8 @@ has-background-light.is-hoverable:active {
 	--color-100: hsl(var(--h), var(--s), var(--100-l));
 }
 
-[class*='is-color-dark'],
-[class*='has-text-dark'] {
+[class*="is-color-dark"],
+[class*="has-text-dark"] {
 	--bulma-color-l: var(--bulma-dark-l);
 	--bulma-color-l-delta: 0%;
 	color: hsl(
@@ -21520,8 +21520,8 @@ has-background-light.is-hoverable:active {
 	) !important;
 }
 
-[class*='is-background-dark'],
-[class*='has-background-dark'] {
+[class*="is-background-dark"],
+[class*="has-background-dark"] {
 	--bulma-background-l: var(--bulma-dark-l);
 	--bulma-background-l-delta: 0%;
 	background-color: hsl(
@@ -22146,8 +22146,8 @@ has-background-dark.is-hoverable:active {
 	--color-100: hsl(var(--h), var(--s), var(--100-l));
 }
 
-[class*='is-color-text'],
-[class*='has-text-text'] {
+[class*="is-color-text"],
+[class*="has-text-text"] {
 	--bulma-color-l: var(--bulma-text-l);
 	--bulma-color-l-delta: 0%;
 	color: hsl(
@@ -22157,8 +22157,8 @@ has-background-dark.is-hoverable:active {
 	) !important;
 }
 
-[class*='is-background-text'],
-[class*='has-background-text'] {
+[class*="is-background-text"],
+[class*="has-background-text"] {
 	--bulma-background-l: var(--bulma-text-l);
 	--bulma-background-l-delta: 0%;
 	background-color: hsl(
@@ -22783,8 +22783,8 @@ has-background-text.is-hoverable:active {
 	--color-100: hsl(var(--h), var(--s), var(--100-l));
 }
 
-[class*='is-color-primary'],
-[class*='has-text-primary'] {
+[class*="is-color-primary"],
+[class*="has-text-primary"] {
 	--bulma-color-l: var(--bulma-primary-l);
 	--bulma-color-l-delta: 0%;
 	color: hsl(
@@ -22794,8 +22794,8 @@ has-background-text.is-hoverable:active {
 	) !important;
 }
 
-[class*='is-background-primary'],
-[class*='has-background-primary'] {
+[class*="is-background-primary"],
+[class*="has-background-primary"] {
 	--bulma-background-l: var(--bulma-primary-l);
 	--bulma-background-l-delta: 0%;
 	background-color: hsl(
@@ -23420,8 +23420,8 @@ has-background-primary.is-hoverable:active {
 	--color-100: hsl(var(--h), var(--s), var(--100-l));
 }
 
-[class*='is-color-link'],
-[class*='has-text-link'] {
+[class*="is-color-link"],
+[class*="has-text-link"] {
 	--bulma-color-l: var(--bulma-link-l);
 	--bulma-color-l-delta: 0%;
 	color: hsl(
@@ -23431,8 +23431,8 @@ has-background-primary.is-hoverable:active {
 	) !important;
 }
 
-[class*='is-background-link'],
-[class*='has-background-link'] {
+[class*="is-background-link"],
+[class*="has-background-link"] {
 	--bulma-background-l: var(--bulma-link-l);
 	--bulma-background-l-delta: 0%;
 	background-color: hsl(
@@ -24057,8 +24057,8 @@ has-background-link.is-hoverable:active {
 	--color-100: hsl(var(--h), var(--s), var(--100-l));
 }
 
-[class*='is-color-info'],
-[class*='has-text-info'] {
+[class*="is-color-info"],
+[class*="has-text-info"] {
 	--bulma-color-l: var(--bulma-info-l);
 	--bulma-color-l-delta: 0%;
 	color: hsl(
@@ -24068,8 +24068,8 @@ has-background-link.is-hoverable:active {
 	) !important;
 }
 
-[class*='is-background-info'],
-[class*='has-background-info'] {
+[class*="is-background-info"],
+[class*="has-background-info"] {
 	--bulma-background-l: var(--bulma-info-l);
 	--bulma-background-l-delta: 0%;
 	background-color: hsl(
@@ -24694,8 +24694,8 @@ has-background-info.is-hoverable:active {
 	--color-100: hsl(var(--h), var(--s), var(--100-l));
 }
 
-[class*='is-color-success'],
-[class*='has-text-success'] {
+[class*="is-color-success"],
+[class*="has-text-success"] {
 	--bulma-color-l: var(--bulma-success-l);
 	--bulma-color-l-delta: 0%;
 	color: hsl(
@@ -24705,8 +24705,8 @@ has-background-info.is-hoverable:active {
 	) !important;
 }
 
-[class*='is-background-success'],
-[class*='has-background-success'] {
+[class*="is-background-success"],
+[class*="has-background-success"] {
 	--bulma-background-l: var(--bulma-success-l);
 	--bulma-background-l-delta: 0%;
 	background-color: hsl(
@@ -25331,8 +25331,8 @@ has-background-success.is-hoverable:active {
 	--color-100: hsl(var(--h), var(--s), var(--100-l));
 }
 
-[class*='is-color-warning'],
-[class*='has-text-warning'] {
+[class*="is-color-warning"],
+[class*="has-text-warning"] {
 	--bulma-color-l: var(--bulma-warning-l);
 	--bulma-color-l-delta: 0%;
 	color: hsl(
@@ -25342,8 +25342,8 @@ has-background-success.is-hoverable:active {
 	) !important;
 }
 
-[class*='is-background-warning'],
-[class*='has-background-warning'] {
+[class*="is-background-warning"],
+[class*="has-background-warning"] {
 	--bulma-background-l: var(--bulma-warning-l);
 	--bulma-background-l-delta: 0%;
 	background-color: hsl(
@@ -25968,8 +25968,8 @@ has-background-warning.is-hoverable:active {
 	--color-100: hsl(var(--h), var(--s), var(--100-l));
 }
 
-[class*='is-color-danger'],
-[class*='has-text-danger'] {
+[class*="is-color-danger"],
+[class*="has-text-danger"] {
 	--bulma-color-l: var(--bulma-danger-l);
 	--bulma-color-l-delta: 0%;
 	color: hsl(
@@ -25979,8 +25979,8 @@ has-background-warning.is-hoverable:active {
 	) !important;
 }
 
-[class*='is-background-danger'],
-[class*='has-background-danger'] {
+[class*="is-background-danger"],
+[class*="has-background-danger"] {
 	--bulma-background-l: var(--bulma-danger-l);
 	--bulma-background-l-delta: 0%;
 	background-color: hsl(
@@ -26913,7 +26913,7 @@ has-background-danger.is-hoverable:active {
 
 .is-clearfix::after {
 	clear: both;
-	content: ' ';
+	content: " ";
 	display: table;
 }
 
@@ -28134,27 +28134,27 @@ has-background-danger.is-hoverable:active {
 }
 
 .is-family-primary {
-	font-family: 'Inter', 'SF Pro', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Helvetica Neue',
-		'Helvetica', 'Arial', sans-serif !important;
+	font-family: "Inter", "SF Pro", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue",
+		"Helvetica", "Arial", sans-serif !important;
 }
 
 .is-family-secondary {
-	font-family: 'Inter', 'SF Pro', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Helvetica Neue',
-		'Helvetica', 'Arial', sans-serif !important;
+	font-family: "Inter", "SF Pro", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue",
+		"Helvetica", "Arial", sans-serif !important;
 }
 
 .is-family-sans-serif {
-	font-family: 'Inter', 'SF Pro', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Helvetica Neue',
-		'Helvetica', 'Arial', sans-serif !important;
+	font-family: "Inter", "SF Pro", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue",
+		"Helvetica", "Arial", sans-serif !important;
 }
 
 .is-family-monospace {
-	font-family: 'Inconsolata', 'Hack', 'SF Mono', 'Roboto Mono', 'Source Code Pro', 'Ubuntu Mono',
+	font-family: "Inconsolata", "Hack", "SF Mono", "Roboto Mono", "Source Code Pro", "Ubuntu Mono",
 		monospace !important;
 }
 
 .is-family-code {
-	font-family: 'Inconsolata', 'Hack', 'SF Mono', 'Roboto Mono', 'Source Code Pro', 'Ubuntu Mono',
+	font-family: "Inconsolata", "Hack", "SF Mono", "Roboto Mono", "Source Code Pro", "Ubuntu Mono",
 		monospace !important;
 }
 

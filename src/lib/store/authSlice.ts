@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { getToken } from '../auth';
+import { createSlice } from "@reduxjs/toolkit";
+import { getToken } from "../auth";
 
 export type AuthData = {
 	authToken?: string;
@@ -11,7 +11,7 @@ const initialState: AuthData = {
 };
 
 export const authSlice = createSlice({
-	name: 'auth',
+	name: "auth",
 	initialState,
 	reducers: {
 		setToken: (state, action) => {

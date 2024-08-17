@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite';
-import { sveltekit } from '@sveltejs/kit/vite';
-import basicSsl from '@vitejs/plugin-basic-ssl';
-import * as path from 'path';
+import { defineConfig } from "vite";
+import { sveltekit } from "@sveltejs/kit/vite";
+import basicSsl from "@vitejs/plugin-basic-ssl";
+import * as path from "path";
 
 export default defineConfig({
 	plugins: [sveltekit(), basicSsl()],
@@ -11,8 +11,8 @@ export default defineConfig({
 	resolve: {
 		alias: [
 			{
-				find: '@',
-				replacement: path.resolve('./src')
+				find: "@",
+				replacement: path.resolve("./src")
 			}
 		]
 	}
