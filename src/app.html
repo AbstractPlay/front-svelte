@@ -1,45 +1,72 @@
 <!doctype html>
 <html lang="en" color-mode="light">
-	<head>
-		<meta charset="utf-8" />
-		<!-- favicon generator stuff -->
-		<link rel="apple-touch-icon" sizes="180x180" href="%sveltekit.assets%/apple-touch-icon.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="%sveltekit.assets%/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="%sveltekit.assets%/favicon-16x16.png" />
-		<link rel="mask-icon" href="%sveltekit.assets%/safari-pinned-tab.svg" color="#5bbad5" />
-		<meta name="msapplication-TileColor" content="#da532c" />
-		<!-- end favicon generator stuff -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		<meta name="theme-color" content="#000000" />
-		<!--
+    <head>
+        <meta charset="utf-8" />
+        <!-- favicon generator stuff -->
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="%sveltekit.assets%/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="%sveltekit.assets%/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="%sveltekit.assets%/favicon-16x16.png"
+        />
+        <link
+            rel="mask-icon"
+            href="%sveltekit.assets%/safari-pinned-tab.svg"
+            color="#5bbad5"
+        />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <!-- end favicon generator stuff -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta name="theme-color" content="#000000" />
+        <!--
         manifest.json provides metadata used when your web app is installed on a
         user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
       -->
-		<link rel="manifest" href="%sveltekit.assets%/manifest.json" />
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-		/>
+        <link rel="manifest" href="%sveltekit.assets%/manifest.json" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
 
-		<!-- These meta tags are static and can live here forever -->
-		<meta property="og:site_name" content="Abstract Play: Make Time for Games" />
-		<meta property="og:type" content="website" />
-		<meta property="og:image" content="https://play.abstractplay.com/logo-full-light.png" />
+        <!-- These meta tags are static and can live here forever -->
+        <meta
+            property="og:site_name"
+            content="Abstract Play: Make Time for Games"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:image"
+            content="https://play.abstractplay.com/logo-full-light.png"
+        />
 
-		<!-- These ones change based on child page, but that doesn't work until we move
+        <!-- These ones change based on child page, but that doesn't work until we move
          to server-side rendering. So put static placeholders here for now. -->
-		<meta property="og:title" content="Abstract Play Homepage" />
-		<meta property="og:url" content="https://play.abstractplay.com" />
-		<meta
-			property="og:description"
-			content="Play abstract strategy board games online asynchronously!"
-		/>
+        <meta property="og:title" content="Abstract Play Homepage" />
+        <meta property="og:url" content="https://play.abstractplay.com" />
+        <meta
+            property="og:description"
+            content="Play abstract strategy board games online asynchronously!"
+        />
 
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<main id="root" class="container p-0">%sveltekit.body%</main>
-	</body>
+        %sveltekit.head%
+    </head>
+    <body data-sveltekit-preload-data="hover">
+        <main id="root" class="container p-0">%sveltekit.body%</main>
+    </body>
 </html>

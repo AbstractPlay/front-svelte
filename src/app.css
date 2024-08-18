@@ -7,66 +7,66 @@
 
 /* Colour definitions */
 :root[color-mode="light"] {
-	--main-bg-color: white;
-	--main-font-color: black;
-	--secondary-font-color: #333;
-	--high-contrast-font-color: var(--main-bg-color);
-	--main-heading-color: #1a3e6f;
-	--main-fg-color: #1a3e6f;
-	--bg-color2: #999999;
-	--secondary-color-1: #ff6633;
-	--secondary-color-1-lighter: #ff8962;
-	--secondary-color-2: #99cccc;
-	--secondary-color-3: #008ca8;
-	--secondary-color-3-lighter: #009fbf;
-	--secondary-color-3-bg: #eefcff;
-	--tag-background-color: #f5f5f5;
-	--dropshadow-target-start: rgba(10, 10, 10, 0.1);
-	--dropshadow-target-end: rgba(10, 10, 10, 0.02);
-	--svg-label-color: black;
-	--svg-annotation-color: black;
-	--svg-gridline-color: black;
-	--svg-default-fill: black;
-	--svg-volcano-caps: black;
+    --main-bg-color: white;
+    --main-font-color: black;
+    --secondary-font-color: #333;
+    --high-contrast-font-color: var(--main-bg-color);
+    --main-heading-color: #1a3e6f;
+    --main-fg-color: #1a3e6f;
+    --bg-color2: #999999;
+    --secondary-color-1: #ff6633;
+    --secondary-color-1-lighter: #ff8962;
+    --secondary-color-2: #99cccc;
+    --secondary-color-3: #008ca8;
+    --secondary-color-3-lighter: #009fbf;
+    --secondary-color-3-bg: #eefcff;
+    --tag-background-color: #f5f5f5;
+    --dropshadow-target-start: rgba(10, 10, 10, 0.1);
+    --dropshadow-target-end: rgba(10, 10, 10, 0.02);
+    --svg-label-color: black;
+    --svg-annotation-color: black;
+    --svg-gridline-color: black;
+    --svg-default-fill: black;
+    --svg-volcano-caps: black;
 
-	/* Currently unused */
-	/* --main-fg-color-lighter: #c3d6f1; */
-	/* --secondary-color-1-bg: #ffe8e0; */
-	/* --secondary-color-2-lighter: #e6f2f2; */
+    /* Currently unused */
+    /* --main-fg-color-lighter: #c3d6f1; */
+    /* --secondary-color-1-bg: #ffe8e0; */
+    /* --secondary-color-2-lighter: #e6f2f2; */
 }
 
 :root[color-mode="dark"] {
-	--main-bg-color: #222;
-	--main-font-color: #e6f2f2;
-	--secondary-font-color: #c3d6f1;
-	--high-contrast-font-color: var(--main-font-color);
-	--main-heading-color: #008ca8;
-	--main-fg-color: #009fbf;
-	--bg-color2: #999999;
-	--secondary-color-1: #ff6633;
-	--secondary-color-1-lighter: #ff8962;
-	--secondary-color-2: #99cccc;
-	--secondary-color-3: #008ca8;
-	--secondary-color-3-lighter: #009fbf;
-	--secondary-color-3-bg: #333;
-	--tag-background-color: #444;
-	--svg-label-color: var(--main-fg-color);
-	--svg-annotation-color: var(--secondary-color-2);
-	--svg-gridline-color: var(--main-font-color);
-	--svg-default-fill: var(--main-font-color);
-	--svg-volcano-caps: #888;
-	--dropshadow-target-start: rgba(245, 245, 245, 0.1);
-	--dropshadow-target-end: rgba(245, 245, 245, 0.02);
+    --main-bg-color: #222;
+    --main-font-color: #e6f2f2;
+    --secondary-font-color: #c3d6f1;
+    --high-contrast-font-color: var(--main-font-color);
+    --main-heading-color: #008ca8;
+    --main-fg-color: #009fbf;
+    --bg-color2: #999999;
+    --secondary-color-1: #ff6633;
+    --secondary-color-1-lighter: #ff8962;
+    --secondary-color-2: #99cccc;
+    --secondary-color-3: #008ca8;
+    --secondary-color-3-lighter: #009fbf;
+    --secondary-color-3-bg: #333;
+    --tag-background-color: #444;
+    --svg-label-color: var(--main-fg-color);
+    --svg-annotation-color: var(--secondary-color-2);
+    --svg-gridline-color: var(--main-font-color);
+    --svg-default-fill: var(--main-font-color);
+    --svg-volcano-caps: #888;
+    --dropshadow-target-start: rgba(245, 245, 245, 0.1);
+    --dropshadow-target-end: rgba(245, 245, 245, 0.02);
 }
 
 /* Any element with the class "light--hidden" will be hidden when the site is set to Light Mode */
 :root[color-mode="light"] .light--hidden {
-	display: none;
+    display: none;
 }
 
 /* Any element with the class "dark--hidden" will be hidden when the site is set to Dark Mode */
 :root[color-mode="dark"] .dark--hidden {
-	display: none;
+    display: none;
 }
 
 h1,
@@ -75,7 +75,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Cardo", serif;
+    font-family: "Cardo", serif;
 }
 
 html,
@@ -84,67 +84,67 @@ button,
 input,
 select,
 textarea {
-	font-family: "Josefin Sans", sans-serif;
-	font-size: 1em;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	background-color: var(--main-bg-color);
-	color: var(--main-font-color);
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--main-bg-color);
+    color: var(--main-font-color);
 }
 
 .input,
 .select select,
 .textarea,
 .button {
-	border-color: #dbdbdb;
+    border-color: #dbdbdb;
 }
 
 .tableNav button {
-	background-color: var(--main-bg-color);
-	color: var(--main-font-color);
+    background-color: var(--main-bg-color);
+    color: var(--main-font-color);
 }
 
 button:disabled {
-	--bulma-button-disabled-background-color: #fff;
-	--bulma-button-disabled-border-color: #dbdbdb;
-	color: var(--main-font-color);
-	opacity: 0.5;
+    --bulma-button-disabled-background-color: #fff;
+    --bulma-button-disabled-border-color: #dbdbdb;
+    color: var(--main-font-color);
+    opacity: 0.5;
 }
 
 html {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-	box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 /* Link handling */
 a {
-	color: inherit;
+    color: inherit;
 }
 
 a:hover {
-	color: var(--secondary-font-color);
+    color: var(--secondary-font-color);
 }
 
 .content * a {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 table,
 .content table td,
 .content table th {
-	--bulma-table-color: var(--main-font-color) !important;
-	--bulma-border: gray !important;
-	--bulma-content-table-cell-border: 1px solid var(--bulma-border) !important;
+    --bulma-table-color: var(--main-font-color) !important;
+    --bulma-border: gray !important;
+    --bulma-content-table-cell-border: 1px solid var(--bulma-border) !important;
 }
 
 table * a {
-	color: var(--secondary-color-3);
-	text-decoration: underline;
+    color: var(--secondary-color-3);
+    text-decoration: underline;
 }
 
 .navbar,
@@ -155,830 +155,834 @@ a.navbar-item,
 .navbar-dropdown,
 .navbar-dropdown .navbar-item,
 .navbar-dropdown a.navbar-item:not(.is-active, .is-selected) {
-	background-color: var(--main-bg-color) !important;
+    background-color: var(--main-bg-color) !important;
 }
 
 a.navbar-item:hover,
 .navbar-link:hover,
 .navbar-dropdown a.navbar-item:not(.is-active, .is-selected):hover {
-	background-color: var(--secondary-color-3-bg) !important;
+    background-color: var(--secondary-color-3-bg) !important;
 }
 
 .navbar-item,
 a.navbar-item,
 .navbar-link,
 .navbar-dropdown a.navbar-item:not(.is-active, .is-selected) {
-	color: var(--main-font-color) !important;
+    color: var(--main-font-color) !important;
 }
 
 .tag {
-	color: var(--main-font-color);
-	background-color: var(--tag-background-color);
+    color: var(--main-font-color);
+    background-color: var(--tag-background-color);
 }
 
 :root[color-mode="dark"] a.navbar-burger {
-	color: var(--main-font-color);
+    color: var(--main-font-color);
 }
 
 :root[color-mode="dark"] a.navbar-burger:hover {
-	color: var(--secondary-font-color);
+    color: var(--secondary-font-color);
 }
 
 .title,
 .subtitle {
-	color: var(--main-heading-color);
+    color: var(--main-heading-color);
 }
 
 .content .title,
 .content .subtitle {
-	color: var(--main-heading-color);
+    color: var(--main-heading-color);
 }
 
 .checkbox:hover,
 .radio:hover {
-	color: var(--secondary-font-color);
+    color: var(--secondary-font-color);
 }
 
 /* Add a little bit of space after checkboxes and radio buttons */
 input[type="checkbox"],
 input[type="radio"] {
-	margin-right: 0.25em;
+    margin-right: 0.25em;
 }
 
 strong {
-	color: var(--main-font-color);
+    color: var(--main-font-color);
 }
 
 .label {
-	color: var(--main-fg-color);
+    color: var(--main-fg-color);
 }
 
 .footer {
-	background-color: var(--secondary-color-3-bg);
+    background-color: var(--secondary-color-3-bg);
 }
 
 .modal-card-head,
 .modal-card-foot {
-	background-color: var(--secondary-color-3-bg);
+    background-color: var(--secondary-color-3-bg);
 }
 
 .modal-card-body {
-	background-color: var(--main-bg-color);
+    background-color: var(--main-bg-color);
 }
 
 .modal-card-body h2 {
-	color: var(--main-font-color);
+    color: var(--main-font-color);
 }
 
 .modal-card-title {
-	color: var(--main-fg-color);
+    color: var(--main-fg-color);
 }
 
 .card {
-	background-color: var(--main-bg-color);
-	box-shadow:
-		0 0.5em 1em -0.125em var(--dropshadow-target-start),
-		0 0 0 1px var(--dropshadow-target-end);
-	color: var(--main-font-color);
+    background-color: var(--main-bg-color);
+    box-shadow:
+        0 0.5em 1em -0.125em var(--dropshadow-target-start),
+        0 0 0 1px var(--dropshadow-target-end);
+    color: var(--main-font-color);
 }
 
 .card-header {
-	box-shadow: 0 0.125em 0.25em var(--dropshadow-target-start);
+    box-shadow: 0 0.125em 0.25em var(--dropshadow-target-start);
 }
 
 .card-header-title {
-	color: var(--main-font-color);
+    color: var(--main-font-color);
 }
 
 /* Only used to colour buttons until I can figure out how to override Bulma colours */
 .apButton {
-	background: linear-gradient(
-		180deg,
-		var(--secondary-color-3-lighter) 0%,
-		var(--secondary-color-3) 100%
-	);
-	color: var(--high-contrast-font-color);
+    background: linear-gradient(
+        180deg,
+        var(--secondary-color-3-lighter) 0%,
+        var(--secondary-color-3) 100%
+    );
+    color: var(--high-contrast-font-color);
 }
 
 .apButton:hover {
-	background: var(--main-fg-color);
-	color: var(--high-contrast-font-color);
+    background: var(--main-fg-color);
+    color: var(--high-contrast-font-color);
 }
 
 .apButtonAlert {
-	background: linear-gradient(
-		180deg,
-		var(--secondary-color-1-lighter) 0%,
-		var(--secondary-color-1) 100%
-	);
-	color: var(--high-contrast-font-color);
+    background: linear-gradient(
+        180deg,
+        var(--secondary-color-1-lighter) 0%,
+        var(--secondary-color-1) 100%
+    );
+    color: var(--high-contrast-font-color);
 }
 
 .apButtonAlert:hover {
-	background: var(--main-fg-color);
-	color: var(--high-contrast-font-color);
+    background: var(--main-fg-color);
+    color: var(--high-contrast-font-color);
 }
 
 .apButtonNeutral {
-	/* background: linear-gradient(
+    /* background: linear-gradient(
       180deg,
       var(--secondary-color-3-bg) 0%
       var(--main-bg-color) 100%,
     ); */
-	background: var(--main-bg-color);
-	color: var(--main-font-color);
+    background: var(--main-bg-color);
+    color: var(--main-font-color);
 }
 
 .apButtonNeutral:hover {
-	background: var(--bg-color2);
-	color: var(--high-contrast-font-color);
+    background: var(--bg-color2);
+    color: var(--high-contrast-font-color);
 }
 
 .inlineButton {
-	margin-left: 1em;
+    margin-left: 1em;
 }
 
 /* Outlines the chosen game on the Games page */
 .theMetaGame {
-	border: 1px solid var(--main-fg-color);
+    border: 1px solid var(--main-fg-color);
 }
 
 .lastMove {
-	border: 1px solid var(--main-fg-color);
+    border: 1px solid var(--main-fg-color);
 }
 
 /* Used to create headings with lines on either side */
 .lined {
-	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
-	color: var(--main-fg-color);
-	display: block;
-	position: relative;
-	text-align: left;
-	z-index: 1;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--main-fg-color);
+    display: block;
+    position: relative;
+    text-align: left;
+    z-index: 1;
 }
 
 .lined:before {
-	border-top: 2px solid var(--main-fg-color);
-	content: "";
-	position: absolute;
-	top: 12px;
-	left: 0;
-	width: 100%;
-	z-index: -1;
+    border-top: 2px solid var(--main-fg-color);
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
 }
 
 .lined span {
-	background: var(--main-bg-color);
-	padding: 0em 0.5em;
-	margin: 0em 1.5em;
+    background: var(--main-bg-color);
+    padding: 0em 0.5em;
+    margin: 0em 1.5em;
 }
 
 /* Only used on the dashboard */
 .apBullet {
-	color: var(--secondary-color-1);
-	font-size: 10px;
-	position: relative;
-	bottom: 2px;
-	padding-right: 0.7em;
+    color: var(--secondary-color-1);
+    font-size: 10px;
+    position: relative;
+    bottom: 2px;
+    padding-right: 0.7em;
 }
 
 /* pinch/zoom container */
 .react-transform-wrapper {
-	width: 100% !important;
-	/* height: 100% !important; */
+    width: 100% !important;
+    /* height: 100% !important; */
 }
 
 .react-transform-component {
-	width: 100% !important;
-	/* height: 100% !important; */
+    width: 100% !important;
+    /* height: 100% !important; */
 }
 
 /* Leaving the board and stack styles here for now until I better understand it */
 .board {
-	display: flex;
-	align-items: flex-start;
-	padding: 1em;
-	width: 100%;
-	max-height: 75vh;
+    display: flex;
+    align-items: flex-start;
+    padding: 1em;
+    width: 100%;
+    max-height: 75vh;
 }
 
 .board > svg {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .board > svg * text {
-	cursor: default;
-	user-select: none;
+    cursor: default;
+    user-select: none;
 }
 
 .boardButtons {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 .align-right {
-	float: right;
+    float: right;
 }
 
 .stackboard {
-	flex: 8;
+    flex: 8;
 }
 
 .stack {
-	padding-top: 2em;
-	padding-right: 1.5em;
-	flex: 1;
+    padding-top: 2em;
+    padding-right: 1.5em;
+    flex: 1;
 }
 
 /* Leaving this also for now */
 .player {
-	display: flex;
-	align-items: center;
-	padding-bottom: 0.5em;
+    display: flex;
+    align-items: center;
+    padding-bottom: 0.5em;
 }
 
 th .player {
-	justify-content: center;
+    justify-content: center;
 }
 
 /* For some reason, .playerImage and .toMoveImage are necessary.
  * Putting the height and width in the image does not appear to be working correctly.
  */
 .playerImage {
-	height: 0.8rem;
-	width: 0.8rem;
+    height: 0.8rem;
+    width: 0.8rem;
 }
 
 .toMoveImage {
-	height: 1.15rem;
-	width: 1.15rem;
+    height: 1.15rem;
+    width: 1.15rem;
 }
 
 /* Colours the "board state" indicator */
 .historyState {
-	color: var(--secondary-color-2);
+    color: var(--secondary-color-2);
 }
 
 .currentState {
-	color: var(--main-font-color);
+    color: var(--main-font-color);
 }
 
 .exploreState {
-	color: var(--secondary-color-3);
+    color: var(--secondary-color-3);
 }
 
 .historyState,
 .currentState,
 .exploreState {
-	font-size: larger;
-	font-weight: bolder;
-	padding-bottom: 1em;
+    font-size: larger;
+    font-weight: bolder;
+    padding-bottom: 1em;
 }
 
 /* Stuff for the move history tree. Leaving most of this for now. */
 .move {
-	max-width: 15em;
+    max-width: 15em;
 }
 
 .gameMove {
-	display: inline;
+    display: inline;
 }
 
 .actualMove {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .gameMoveNums {
-	font-size: x-small;
-	vertical-align: bottom !important;
+    font-size: x-small;
+    vertical-align: bottom !important;
 }
 
 .gameMoveFocus {
-	background-color: var(--bg-color2);
-	color: var(--secondary-color-3-bg);
+    background-color: var(--bg-color2);
+    color: var(--secondary-color-3-bg);
 }
 
 .variation-list {
-	display: grid;
-	grid-template-columns: auto 1fr;
-	grid-gap: 5px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 5px;
 }
 
 .variation-item-numbering {
-	font-size: x-small;
-	align-self: end;
+    font-size: x-small;
+    align-self: end;
 }
 
 .variation-item-content {
-	justify-self: start;
+    justify-self: start;
 }
 
 /* Winning/losing indicators */
 .winnerImage {
-	padding-left: 0.2rem;
-	padding-bottom: 0.1rem;
-	height: 0.6rem;
-	width: 0.7rem;
+    padding-left: 0.2rem;
+    padding-bottom: 0.1rem;
+    height: 0.6rem;
+    width: 0.7rem;
 }
 
 .winnerImage2 {
-	padding-left: 0.2rem;
-	height: 0.6rem;
-	width: 0.8rem;
+    padding-left: 0.2rem;
+    height: 0.6rem;
+    width: 0.8rem;
 }
 
 .smallicon {
-	padding-left: 0.2rem;
-	vertical-align: 0.6em;
-	font-size: 8px;
+    padding-left: 0.2rem;
+    vertical-align: 0.6em;
+    font-size: 8px;
 }
 
 .winnerButtonImage {
-	margin-top: 0.4rem;
-	margin-left: 0.7rem;
-	height: 1rem;
-	width: 1rem;
+    margin-top: 0.4rem;
+    margin-left: 0.7rem;
+    height: 1rem;
+    width: 1rem;
 }
 
 .resetIcon {
-	font-size: 1.2rem;
-	margin-left: 0.7rem;
-	height: 1rem;
-	width: 1rem;
+    font-size: 1.2rem;
+    margin-left: 0.7rem;
+    height: 1rem;
+    width: 1rem;
 }
 
 .resetExploreIcon {
-	font-size: 1rem;
-	margin-left: 0.7rem;
-	transform: translateY(-15%);
-	height: 1rem;
-	width: 1rem;
+    font-size: 1rem;
+    margin-left: 0.7rem;
+    transform: translateY(-15%);
+    height: 1rem;
+    width: 1rem;
 }
 
 .winningColorButton {
-	display: inline-block;
+    display: inline-block;
 }
 
 .error {
-	color: red;
+    color: red;
 }
 
 button.fabtn {
-	background-color: var(--main-bg-color);
-	border: none;
-	color: var(--bg-color2);
-	cursor: pointer;
-	padding-block: 1px;
-	padding-inline: 6px;
+    background-color: var(--main-bg-color);
+    border: none;
+    color: var(--bg-color2);
+    cursor: pointer;
+    padding-block: 1px;
+    padding-inline: 6px;
 }
 
 /* Darker background on mouse-over */
 button.fabtn:hover {
-	color: var(--main-fg-color);
+    color: var(--main-fg-color);
 }
 
 .fa-thumbs-up:hover,
 .fa-thumbs-down:hover {
-	color: var(--main-fg-color);
+    color: var(--main-fg-color);
 }
 
 /* Custom tooltips */
 .tooltipped {
-	position: relative;
+    position: relative;
 }
 
 .tooltipped .tooltiptext {
-	visibility: hidden;
-	bottom: 110%;
-	left: 50%;
-	white-space: nowrap;
-	background-color: var(--bg-color2);
-	color: var(--main-font-color);
-	border-radius: 6px;
-	padding: 5px 0.5em;
-	position: absolute;
-	z-index: 1;
-	font-weight: 400;
+    visibility: hidden;
+    bottom: 110%;
+    left: 50%;
+    white-space: nowrap;
+    background-color: var(--bg-color2);
+    color: var(--main-font-color);
+    border-radius: 6px;
+    padding: 5px 0.5em;
+    position: absolute;
+    z-index: 1;
+    font-weight: 400;
 }
 
 .tooltipped:hover .tooltiptext {
-	visibility: visible;
+    visibility: visible;
 }
 
 .tooltipped:disabled .tooltiptext {
-	visibility: hidden;
+    visibility: hidden;
 }
 
 .input-icon {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .movesTable {
-	max-height: 300px; /* If you change this also change the scroll function in GameMoves */
-	overflow-y: auto;
+    max-height: 300px; /* If you change this also change the scroll function in GameMoves */
+    overflow-y: auto;
 }
 
 .movesTablePlayground {
-	max-height: 600px;
-	overflow-y: auto;
+    max-height: 600px;
+    overflow-y: auto;
 }
 
 .movesTable th {
-	top: 0;
-	position: sticky;
-	background: var(--main-bg-color);
-	color: inherit;
+    top: 0;
+    position: sticky;
+    background: var(--main-bg-color);
+    color: inherit;
 }
 
 .chatTable {
-	max-height: 200px;
-	overflow-y: auto;
-	font-size: smaller;
+    max-height: 200px;
+    overflow-y: auto;
+    font-size: smaller;
 }
 
 /* Leaving the stuff for user settings until I'm prepared to expand it */
 .userSettings {
-	width: 100%;
-	display: flex;
-	justify-content: flex-start;
-	flex-wrap: wrap;
-	align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .userSettingsBtn {
-	font-size: 120%;
+    font-size: 120%;
 }
 .userSettingsLabelDiv {
-	display: block;
-	width: 30%;
-	text-align: right;
+    display: block;
+    width: 30%;
+    text-align: right;
 }
 
 .userSettingsInputDiv {
-	display: block;
-	width: 50%;
+    display: block;
+    width: 50%;
 }
 
 .userSettingsInfo {
-	font-size: 75%;
+    font-size: 75%;
 }
 
 .userSettingsButtonDiv {
-	display: block;
-	width: 20%;
+    display: block;
+    width: 20%;
 }
 
 /* Makes system chats less prominent */
 .chatSystem {
-	opacity: 0.5;
+    opacity: 0.5;
 }
 
 /* Used to force hyperlinks to wrap on the Games list page */
 .contained {
-	/* These are technically the same, but use both */
-	overflow-wrap: break-word;
-	word-wrap: break-word;
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 
-	-ms-word-break: break-all;
-	/* This is the dangerous one in WebKit, as it breaks things wherever */
-	word-break: break-all;
-	/* Instead use this non-standard one: */
-	word-break: break-word;
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
 
-	/* Adds a hyphen where the word breaks, if supported (No Blink) */
-	-ms-hyphens: auto;
-	-moz-hyphens: auto;
-	-webkit-hyphens: auto;
-	hyphens: auto;
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
 }
 
 /* Overrides Bulma's default 1.5rem */
 .subtitle:not(:last-child) {
-	margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 /* Colours the buttons in the move tree button bar */
 #MoveTreeBtnBar > button {
-	background-color: var(--main-fg-color);
-	color: var(--high-contrast-font-color);
-	/* Have to size them because otherwise the invisible tooltip text leads to mixed sizes */
-	width: 1.5em;
+    background-color: var(--main-fg-color);
+    color: var(--high-contrast-font-color);
+    /* Have to size them because otherwise the invisible tooltip text leads to mixed sizes */
+    width: 1.5em;
 }
 
 /* Can be nested to create ever-more indented containers.
  * Used for the dashboard.
  */
 .indentedContainer {
-	padding-left: 2em;
-	padding-bottom: 1em;
+    padding-left: 2em;
+    padding-bottom: 1em;
 }
 
 /* Only the dashboard uses special bullet glyphs */
 #dashboard * ul {
-	list-style: none;
-	margin-left: 0;
+    list-style: none;
+    margin-left: 0;
 }
 
 /* Raises modal screens so they overlay the move exploration buttons */
 /* Tooltips are z-index 100 to overlay other elements, so modal has to be higher */
 .modal {
-	z-index: 1000;
+    z-index: 1000;
 }
 
 /* More prominent YourTurn indicator */
 .yourTurn {
-	display: flex;
-	align-items: center;
-	padding: 0.3em;
+    display: flex;
+    align-items: center;
+    padding: 0.3em;
 }
 
 .myTurn {
-	border-radius: 0.25em;
-	padding: 0.3em;
-	background-color: var(--secondary-color-1-lighter);
+    border-radius: 0.25em;
+    padding: 0.3em;
+    background-color: var(--secondary-color-1-lighter);
 }
 
 .playerName {
-	margin-left: 0.5em;
-	line-height: 1.15rem; /* Match the line height with the image height */
-	transform: translateY(10%);
-	color: var(--main-font-color);
+    margin-left: 0.5em;
+    line-height: 1.15rem; /* Match the line height with the image height */
+    transform: translateY(10%);
+    color: var(--main-font-color);
 }
 
 /* text notification of being in check */
 .inCheck {
-	color: var(--secondary-color-1);
-	font-size: larger;
-	font-weight: bolder;
+    color: var(--secondary-color-1);
+    font-size: larger;
+    font-weight: bolder;
 }
 
 /* stuff for the stars */
 .starContainer {
-	text-align: right;
+    text-align: right;
 }
 
 .glowingStar {
-	color: #ffdf00;
+    color: #ffdf00;
 }
 
 .table {
-	background-color: var(--main-bg-color);
-	color: var(--main-font-color);
+    background-color: var(--main-bg-color);
+    color: var(--main-font-color);
 }
 
 .apTable {
-	background-color: var(--main-bg-color);
-	color: var(--main-font-color);
-	font-size: smaller;
+    background-color: var(--main-bg-color);
+    color: var(--main-font-color);
+    font-size: smaller;
 }
 
 .apTable thead th {
-	color: var(--main-font-color);
+    color: var(--main-font-color);
 }
 
 tr.stickyHeader {
-	position: sticky;
-	background: var(--main-bg-color);
-	top: 0;
-	z-index: 10;
+    position: sticky;
+    background: var(--main-bg-color);
+    top: 0;
+    z-index: 10;
 }
 
 .content table thead th {
-	color: var(--main-font-color);
+    color: var(--main-font-color);
 }
 
 .input,
 .select select,
 .textarea {
-	background-color: var(--main-bg-color);
-	color: var(--main-font-color);
+    background-color: var(--main-bg-color);
+    color: var(--main-font-color);
 }
 
 .apTable tbody tr:nth-child(even) {
-	background-color: var(--secondary-color-3-bg);
+    background-color: var(--secondary-color-3-bg);
 }
 
 .apTable * .sortable {
-	cursor: pointer;
-	user-select: none;
-	color: inherit;
+    cursor: pointer;
+    user-select: none;
+    color: inherit;
 }
 
 .apTable tr.newChat {
-	font-weight: bolder;
+    font-weight: bolder;
 }
 
 .apTable tr.tourneyGame {
-	font-weight: bolder;
+    font-weight: bolder;
 }
 
 .apTable tr.newChat span.newChat::before {
-	position: relative;
-	padding-right: 5px;
-	display: inline;
-	content: "\002709";
-	color: var(--secondary-color-1);
+    position: relative;
+    padding-right: 5px;
+    display: inline;
+    content: "\002709";
+    color: var(--secondary-color-1);
 }
 
 .smallerText {
-	font-size: smaller;
+    font-size: smaller;
 }
 
 .highlight {
-	color: var(--secondary-color-1);
+    color: var(--secondary-color-1);
 }
 
 .bolder {
-	font-weight: bolder;
+    font-weight: bolder;
 }
 
 .topPad {
-	padding-top: 1em;
+    padding-top: 1em;
 }
 
 .miniChart {
-	display: table;
-	table-layout: fixed;
-	width: 100%;
-	/* max-width: 700px; */
-	height: 2rem;
-	margin: 0 auto;
-	/* background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 2%, rgba(0, 0, 0, 0) 2%);
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    /* max-width: 700px; */
+    height: 2rem;
+    margin: 0 auto;
+    /* background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 2%, rgba(0, 0, 0, 0) 2%);
     background-size: 100% 50px;
     background-position: left top; */
 }
 .miniChart li {
-	position: relative;
-	display: table-cell;
-	vertical-align: bottom;
-	height: 2rem;
+    position: relative;
+    display: table-cell;
+    vertical-align: bottom;
+    height: 2rem;
 }
 .miniChart span {
-	margin: 0 0.1em;
-	display: block;
-	background: var(--secondary-color-3); /*rgba(209, 236, 250, 0.75);*/
+    margin: 0 0.1em;
+    display: block;
+    background: var(--secondary-color-3); /*rgba(209, 236, 250, 0.75);*/
 }
 .miniChart span:before {
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 100%;
-	padding: 5px 1em 0;
-	display: block;
-	text-align: center;
-	content: attr(title);
-	word-wrap: break-word;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    padding: 5px 1em 0;
+    display: block;
+    text-align: center;
+    content: attr(title);
+    word-wrap: break-word;
 }
 
 /* Stuff for flags */
 .flag {
-	display: inline-block;
-	overflow: hidden;
-	position: relative;
-	box-sizing: border-box;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
 }
 .flag.size-s {
-	width: 16px;
-	height: 12px;
+    width: 16px;
+    height: 12px;
 }
 .orb.size-s {
-	width: 12px;
-	height: 12px;
+    width: 12px;
+    height: 12px;
 }
 .flag.size-s.drop-shadow {
-	box-shadow: 0 0 1px 0.5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 1px 0.5px rgba(0, 0, 0, 0.1);
 }
 .flag.size-s.border-radius {
-	border-radius: 1px;
+    border-radius: 1px;
 }
 .flag.size-s.border-radius.border::before {
-	border-radius: 1px;
+    border-radius: 1px;
 }
 .flag.size-m {
-	width: 20px;
-	height: 15px;
+    width: 20px;
+    height: 15px;
 }
 .orb.size-m {
-	width: 18px;
-	height: 18px;
+    width: 18px;
+    height: 18px;
 }
 .flag.size-m.drop-shadow {
-	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 }
 .flag.size-m.border-radius {
-	border-radius: 1.5px;
+    border-radius: 1.5px;
 }
 .flag.size-m.border-radius.border::before {
-	border-radius: 1.5px;
+    border-radius: 1.5px;
 }
 .flag.size-l {
-	width: 32px;
-	height: 24px;
+    width: 32px;
+    height: 24px;
 }
 .orb.size-l {
-	width: 24px;
-	height: 24px;
+    width: 24px;
+    height: 24px;
 }
 .flag.size-l.drop-shadow {
-	box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
 }
 .flag.size-l.border-radius {
-	border-radius: 2px;
+    border-radius: 2px;
 }
 .flag.size-l.border-radius.border::before {
-	border-radius: 2px;
+    border-radius: 2px;
 }
 .flag.border::before {
-	content: "";
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	display: block;
-	mix-blend-mode: overlay;
-	box-sizing: border-box;
-	border: 1px solid rgba(0, 0, 0, 0.5);
-	mix-blend-mode: overlay;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    mix-blend-mode: overlay;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    mix-blend-mode: overlay;
 }
 .flag.top-down::before {
-	content: "";
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	display: block;
-	mix-blend-mode: overlay;
-	box-sizing: border-box;
-	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 2%, rgba(255, 255, 255, 0.7) 100%);
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    mix-blend-mode: overlay;
+    box-sizing: border-box;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.3) 2%,
+        rgba(255, 255, 255, 0.7) 100%
+    );
 }
 .flag.real-linear::before {
-	content: "";
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	display: block;
-	mix-blend-mode: overlay;
-	box-sizing: border-box;
-	background-image: linear-gradient(
-		45deg,
-		rgba(0, 0, 0, 0.2) 0%,
-		rgba(39, 39, 39, 0.22) 11%,
-		rgba(255, 255, 255, 0.3) 27%,
-		rgba(0, 0, 0, 0.24) 41%,
-		rgba(0, 0, 0, 0.55) 52%,
-		rgba(255, 255, 255, 0.26) 63%,
-		rgba(0, 0, 0, 0.27) 74%,
-		rgba(255, 255, 255, 0.3) 100%
-	);
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    mix-blend-mode: overlay;
+    box-sizing: border-box;
+    background-image: linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(39, 39, 39, 0.22) 11%,
+        rgba(255, 255, 255, 0.3) 27%,
+        rgba(0, 0, 0, 0.24) 41%,
+        rgba(0, 0, 0, 0.55) 52%,
+        rgba(255, 255, 255, 0.26) 63%,
+        rgba(0, 0, 0, 0.27) 74%,
+        rgba(255, 255, 255, 0.3) 100%
+    );
 }
 .flag.real-circular::before {
-	content: "";
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	display: block;
-	mix-blend-mode: overlay;
-	box-sizing: border-box;
-	background:
-		radial-gradient(
-				50% 36%,
-				rgba(255, 255, 255, 0.3) 0%,
-				rgba(0, 0, 0, 0.24) 11%,
-				rgba(0, 0, 0, 0.55) 17%,
-				rgba(255, 255, 255, 0.26) 22%,
-				rgba(0, 0, 0, 0.17) 27%,
-				rgba(255, 255, 255, 0.28) 31%,
-				rgba(255, 255, 255, 0) 37%
-			)
-			center calc(50% - 8px) / 600% 600%,
-		radial-gradient(
-				50% 123%,
-				rgba(255, 255, 255, 0.3) 25%,
-				rgba(0, 0, 0, 0.24) 48%,
-				rgba(0, 0, 0, 0.55) 61%,
-				rgba(255, 255, 255, 0.26) 72%,
-				rgba(0, 0, 0, 0.17) 80%,
-				rgba(255, 255, 255, 0.28) 88%,
-				rgba(255, 255, 255, 0.3) 100%
-			)
-			center calc(50% - 8px) / 600% 600%;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    mix-blend-mode: overlay;
+    box-sizing: border-box;
+    background:
+        radial-gradient(
+                50% 36%,
+                rgba(255, 255, 255, 0.3) 0%,
+                rgba(0, 0, 0, 0.24) 11%,
+                rgba(0, 0, 0, 0.55) 17%,
+                rgba(255, 255, 255, 0.26) 22%,
+                rgba(0, 0, 0, 0.17) 27%,
+                rgba(255, 255, 255, 0.28) 31%,
+                rgba(255, 255, 255, 0) 37%
+            )
+            center calc(50% - 8px) / 600% 600%,
+        radial-gradient(
+                50% 123%,
+                rgba(255, 255, 255, 0.3) 25%,
+                rgba(0, 0, 0, 0.24) 48%,
+                rgba(0, 0, 0, 0.55) 61%,
+                rgba(255, 255, 255, 0.26) 72%,
+                rgba(0, 0, 0, 0.17) 80%,
+                rgba(255, 255, 255, 0.28) 88%,
+                rgba(255, 255, 255, 0.3) 100%
+            )
+            center calc(50% - 8px) / 600% 600%;
 }
 .flag img {
-	display: block;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .challenge_notes {
-	max-width: 40ch;
-	overflow-wrap: break-word;
+    max-width: 40ch;
+    overflow-wrap: break-word;
 }
 
 .table-container {
-	overflow-x: auto; /* Enables horizontal scrolling */
-	-webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
 }
 
 /* Game board customimzation for light/dark mode! */
@@ -991,18 +995,24 @@ tr.stickyHeader {
 
 /* Volcano caps */
 symbol#aprender-glyph-389d5741cdfe1 [data-playerstroke="true"] {
-	stroke: var(--svg-volcano-caps);
+    stroke: var(--svg-volcano-caps);
 }
 
 /* Mattock: invert blocked cell color */
 div._meta_mattock polygon.aprender-marker-f47325856bcb8 {
-	fill: var(--svg-default-fill);
+    fill: var(--svg-default-fill);
 }
 
 /* Alfred's Wyke button bar fill inversion in dark mode */
-:root[color-mode="dark"] svg#_btnBar symbol.aprender-button-a697952a21593 > rect {
-	fill: #dddddd;
+:root[color-mode="dark"]
+    svg#_btnBar
+    symbol.aprender-button-a697952a21593
+    > rect {
+    fill: #dddddd;
 }
-:root[color-mode="dark"] svg#_btnBar symbol.aprender-button-0ca07818d5ffc > rect {
-	fill: #999999;
+:root[color-mode="dark"]
+    svg#_btnBar
+    symbol.aprender-button-0ca07818d5ffc
+    > rect {
+    fill: #999999;
 }

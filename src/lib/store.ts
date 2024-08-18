@@ -13,14 +13,15 @@ import { getToken } from "./auth";
 export type StatusType = "idle" | "loading" | "succeeded" | "failed";
 
 export const store = configureStore({
-	reducer: {
-		auth: authReducer,
-		users: usersReducer,
-		game: gameReducer,
-		localSettings: localSettingsReducer,
-		[api.reducerPath]: api.reducer
-	},
-	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(api.middleware)
+    reducer: {
+        auth: authReducer,
+        users: usersReducer,
+        game: gameReducer,
+        localSettings: localSettingsReducer,
+        [api.reducerPath]: api.reducer,
+    },
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(api.middleware),
 });
 
 // Get the type of our store variable
@@ -34,25 +35,25 @@ setupListeners(store.dispatch);
 
 // persist localSettings
 store.subscribe(
-	throttle(() => {
-		const settings = store.getState().localSettings;
-		try {
-			const serializedState = JSON.stringify(settings);
-			localStorage.setItem("localSettings", serializedState);
-		} catch {
-			// ignore write errors
-		}
-	}, 1000)
+    throttle(() => {
+        const settings = store.getState().localSettings;
+        try {
+            const serializedState = JSON.stringify(settings);
+            localStorage.setItem("localSettings", serializedState);
+        } catch {
+            // ignore write errors
+        }
+    }, 1000)
 );
 
 // Keep tabs on AWS-Amplify state
 Hub.listen("auth", async () => {
-	const token = await getToken();
-	if (token !== null) {
-		store.dispatch(setToken(token));
-	} else {
-		store.dispatch(setToken(undefined));
-	}
+    const token = await getToken();
+    if (token !== null) {
+        store.dispatch(setToken(token));
+    } else {
+        store.dispatch(setToken(undefined));
+    }
 });
 
 export default store;

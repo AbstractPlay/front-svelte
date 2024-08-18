@@ -1,66 +1,66 @@
 {
-	"name": "front-sveltekit",
-	"version": "1.0.0-beta",
-	"private": true,
-	"type": "module",
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	},
-	"scripts": {
-		"dev": "vite dev --mode=\"testing\"",
-		"build": "vite build",
-		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write .",
-		"npm-login": "npm login --scope=@abstractplay --auth-type=legacy --registry=https://npm.pkg.github.com",
-		"build-bulma": "sass --no-source-map --load-path=node_modules src/myBulma.scss src/myBulma.css"
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-static": "^3.0.2",
-		"@sveltejs/kit": "^2.0.0",
-		"@sveltejs/vite-plugin-svelte": "^3.0.0",
-		"@types/eslint": "^8.56.7",
-		"@types/lodash": "^4.17.6",
-		"@vitejs/plugin-basic-ssl": "^1.1.0",
-		"bulma": "^1.0.1",
-		"eslint": "^9.0.0",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-svelte": "^2.36.0",
-		"globals": "^15.0.0",
-		"prettier": "^3.1.1",
-		"prettier-plugin-svelte": "^3.1.2",
-		"sass": "^1.77.6",
-		"serverless-finch": "^4.0.4",
-		"serverless-single-page-app-plugin": "^1.0.4",
-		"shx": "^0.3.4",
-		"sitemap": "^8.0.0",
-		"svelte": "^4.2.7",
-		"svelte-check": "^3.6.0",
-		"tslib": "^2.4.1",
-		"typescript": "^5.0.0",
-		"typescript-eslint": "^8.0.0-alpha.20",
-		"vite": "^5.0.3"
-	},
-	"dependencies": {
-		"@abstractplay/gameslib": "file:../gameslib/abstractplay-gameslib-1.0.0-beta.tgz",
-		"@abstractplay/renderer": "^1.0.0-ci-10433828958.0",
-		"@reduxjs/toolkit": "^2.2.6",
-		"aws-amplify": "^6.3.8",
-		"i18next-browser-languagedetector": "^8.0.0",
-		"i18next-http-backend": "^2.5.2",
-		"lodash": "^4.17.21",
-		"svelte-i18next": "^2.2.2",
-		"svelte-markdown": "^0.4.1",
-		"svelte-time": "^0.9.0"
-	}
+    "name": "front-sveltekit",
+    "version": "1.0.0-beta",
+    "private": true,
+    "type": "module",
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "scripts": {
+        "dev": "vite dev --mode=\"testing\"",
+        "build": "vite build",
+        "preview": "vite preview",
+        "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+        "lint": "prettier --check . && eslint .",
+        "format": "prettier --write .",
+        "npm-login": "npm login --scope=@abstractplay --auth-type=legacy --registry=https://npm.pkg.github.com",
+        "build-bulma": "sass --no-source-map --load-path=node_modules src/myBulma.scss src/myBulma.css"
+    },
+    "devDependencies": {
+        "@sveltejs/adapter-static": "^3.0.2",
+        "@sveltejs/kit": "^2.0.0",
+        "@sveltejs/vite-plugin-svelte": "^3.0.0",
+        "@types/eslint": "^8.56.7",
+        "@types/lodash": "^4.17.6",
+        "@vitejs/plugin-basic-ssl": "^1.1.0",
+        "bulma": "^1.0.1",
+        "eslint": "^9.0.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-svelte": "^2.36.0",
+        "globals": "^15.0.0",
+        "prettier": "^3.1.1",
+        "prettier-plugin-svelte": "^3.1.2",
+        "sass": "^1.77.6",
+        "serverless-finch": "^4.0.4",
+        "serverless-single-page-app-plugin": "^1.0.4",
+        "shx": "^0.3.4",
+        "sitemap": "^8.0.0",
+        "svelte": "^4.2.7",
+        "svelte-check": "^3.6.0",
+        "tslib": "^2.4.1",
+        "typescript": "^5.0.0",
+        "typescript-eslint": "^8.0.0-alpha.20",
+        "vite": "^5.0.3"
+    },
+    "dependencies": {
+        "@abstractplay/gameslib": "file:../gameslib/abstractplay-gameslib-1.0.0b-beta.tgz",
+        "@abstractplay/renderer": "^1.0.0-ci-10433828958.0",
+        "@reduxjs/toolkit": "^2.2.6",
+        "aws-amplify": "^6.3.8",
+        "i18next-browser-languagedetector": "^8.0.0",
+        "i18next-http-backend": "^2.5.2",
+        "lodash": "^4.17.21",
+        "svelte-i18next": "^2.2.2",
+        "svelte-markdown": "^0.4.1",
+        "svelte-time": "^0.9.0"
+    }
 }
