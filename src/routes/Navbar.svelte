@@ -7,14 +7,15 @@
     import { toggleColorMode } from "$lib/store/localSettingsSlice";
 
     export let store: AppStore;
+    export let me: MeData|undefined = undefined;
 
     import logoLight from "../assets/AbstractPlayLogo-light.svg";
     import logoDark from "../assets/AbstractPlayLogo-dark.svg";
     import LogInOutButton from "./LogInOutButton.svelte";
+    import type { MeData } from "@/lib/types/backend";
 
     let colorMode: "light" | "dark" = "light";
     let burgerExpanded = false;
-    let loggedin = false;
     let newNews = true;
 
     const localToggleColorMode = () => {
@@ -61,7 +62,7 @@
         class="{'navbar-menu' + (burgerExpanded ? ' is-active' : '')}"
     >
         <div class="navbar-start">
-            {#if loggedin}
+            {#if me !== undefined}
                 <div class="navbar-item">
                     <a href="/" class="navbar-item">
                         {$i18n.t("MyDashboard")}
@@ -137,7 +138,7 @@
                 </button>
             </div>
             <div class="navbar-item tourSettings">
-                <LogInOutButton />
+                <LogInOutButton {me} />
             </div>
         </div>
     </div>

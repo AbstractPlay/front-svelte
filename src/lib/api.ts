@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query";
 import { getToken } from "./auth";
-import type { FullGame, UserData, Comment } from "./types/backend";
+import type { FullGame, UserData, Comment, MeData } from "./types/backend";
 
 type APPostResponse = {
     statusCode: number;
@@ -27,8 +27,30 @@ export const api = createApi({
             return headers;
         },
     }),
-    tagTypes: ["Users", "Game"],
+    tagTypes: ["Users", "Game", "Me"],
     endpoints: (builder) => ({
+        me: builder.query<MeData, void>({
+            query: () => ({
+                url: import.meta.env.VITE_API_AUTH,
+                body: JSON.stringify({query: "me"}),
+                responseHandler: "json",
+                method: "POST",
+            }),
+            transformResponse: (response: APPostResponse) => {
+                response = response as APPostResponse;
+                if (response.statusCode === 200) {
+                    return JSON.parse(response.body);
+                } else {
+                    return {
+                        error: {
+                            status: response.statusCode,
+                            data: JSON.parse(response.body),
+                        },
+                    };
+                }
+            },
+            providesTags: ["Me"],
+        }),
         getUsers: builder.query<UserData[], void>({
             query: () => ({
                 url: import.meta.env.VITE_API_OPEN,
@@ -65,10 +87,9 @@ export const api = createApi({
                 responseHandler: "json",
             }),
             transformResponse: (response: APPostResponse | GetGameResult) => {
-                // eslint-disable-next-line no-prototype-builtins
                 if (
-                    response.hasOwnProperty("game") &&
-                    response.hasOwnProperty("comments")
+                    "game" in response  &&
+                    "comments" in response
                 ) {
                     return response;
                 } else {

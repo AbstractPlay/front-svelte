@@ -5,6 +5,9 @@
     const i18n = getContext<Writable<i18nextType>>("i18n");
     import { signInWithRedirect } from "aws-amplify/auth";
     import { getToken } from "$lib/auth";
+    import type { MeData } from "@/lib/types/backend";
+
+    export let me: MeData|undefined = undefined;
 
     let token: string | null = null;
     afterUpdate(async () => {
@@ -21,5 +24,9 @@
         {$i18n.t("LogIn")}
     </button>
 {:else}
-    <p>Logged in</p>
+    {#if me !== undefined}
+        <p>{me.name}</p>
+    {:else}
+        <p>Logged in, but can't get name</p>
+    {/if}
 {/if}

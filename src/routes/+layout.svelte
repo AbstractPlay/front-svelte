@@ -4,6 +4,7 @@
     import getI18nStore from "$lib/i18n";
     import { afterUpdate, setContext, onMount } from "svelte";
     import Navbar from "./Navbar.svelte";
+    import type { MeData } from "@/lib/types/backend";
 
     export let data;
 
@@ -14,15 +15,19 @@
     }
 
     let colorMode: "light" | "dark";
+    let globalMe: MeData|undefined;
     let unsubscribe;
     onMount(() => {
         unsubscribe = data.store.subscribe(() => {
             colorMode = data.store.getState().localSettings.colorMode;
+            globalMe = data.store.getState().me.data;
+            console.log(globalMe);
         });
         return unsubscribe;
     });
     afterUpdate(() => {
         colorMode;
+        globalMe;
     });
     $: if (colorMode !== null && colorMode !== undefined) {
         document.documentElement.setAttribute("color-mode", colorMode);
@@ -33,7 +38,7 @@
     <title>{title}</title>
 </svelte:head>
 
-<Navbar store="{data.store}" />
+<Navbar store="{data.store}" me={globalMe} />
 <section class="section" id="main">
     <slot />
 </section>

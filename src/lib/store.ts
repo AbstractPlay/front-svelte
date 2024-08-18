@@ -9,12 +9,14 @@ import authReducer from "./store/authSlice";
 import { setToken } from "./store/authSlice";
 import gameReducer from "./store/gameSlice";
 import { getToken } from "./auth";
+import meReducer from "./store/meSlice";
 
 export type StatusType = "idle" | "loading" | "succeeded" | "failed";
 
 export const store = configureStore({
     reducer: {
         auth: authReducer,
+        me: meReducer,
         users: usersReducer,
         game: gameReducer,
         localSettings: localSettingsReducer,

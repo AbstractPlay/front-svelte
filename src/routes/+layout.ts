@@ -55,6 +55,9 @@ export function load({ route }) {
     if (store.getState().users.status === "idle") {
         store.dispatch(api.endpoints.getUsers.initiate());
     }
+    if (store.getState().me.status === "idle") {
+        store.dispatch(api.endpoints.me.initiate());
+    }
     return {
         store,
     };

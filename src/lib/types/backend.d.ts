@@ -96,6 +96,25 @@ type FullUser = {
     mayPush?: boolean;
 };
 
+type MeData = {
+    id: string;
+    name: string;
+    admin: boolean;
+    organizer: boolean;
+    language: string;
+    country: string;
+    games: Game[];
+    settings: UserSettings;
+    stars: string[];
+    tags?: TagList[];
+    palettes?: Palette[];
+    mayPush: boolean;
+    challengesIssued?: FullChallenge[];
+    challengesReceived?: FullChallenge[];
+    challengesAccepted?: FullChallenge[];
+    standingChallenges?: FullChallenge[];
+}
+
 export type UserData = {
     id: string;
     name: string;
