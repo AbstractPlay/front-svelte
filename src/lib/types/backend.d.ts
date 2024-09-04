@@ -113,7 +113,7 @@ type MeData = {
     challengesReceived?: FullChallenge[];
     challengesAccepted?: FullChallenge[];
     standingChallenges?: FullChallenge[];
-}
+};
 
 export type UserData = {
     id: string;
@@ -309,6 +309,7 @@ type OrgEventPlayer = {
     pk: "ORGEVENTPLAYER";
     sk: string; // <eventid>#<playerid>
     playerid: string;
+    division?: number;
     seed?: number;
 };
 

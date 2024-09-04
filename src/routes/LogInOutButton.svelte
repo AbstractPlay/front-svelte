@@ -7,7 +7,7 @@
     import { getToken } from "$lib/auth";
     import type { MeData } from "@/lib/types/backend";
 
-    export let me: MeData|undefined = undefined;
+    export let me: MeData | undefined = undefined;
 
     let token: string | null = null;
     afterUpdate(async () => {
@@ -23,10 +23,8 @@
     >
         {$i18n.t("LogIn")}
     </button>
+{:else if me !== undefined}
+    <p>{me.name}</p>
 {:else}
-    {#if me !== undefined}
-        <p>{me.name}</p>
-    {:else}
-        <p>Logged in, but can't get name</p>
-    {/if}
+    <p>Logged in, but can't get name</p>
 {/if}

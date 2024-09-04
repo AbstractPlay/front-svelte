@@ -1,15 +1,15 @@
 <script lang="ts">
     import type { Game } from "@/lib/Game";
     import type { i18nextType } from "@/lib/i18n";
-    import type { AppDispatch } from "@/lib/store";
+    import type { AppDispatch, RootState } from "@/lib/store";
     import type { LocalSettings, Chunk } from "@/lib/store/localSettingsSlice";
     import { moveChunkUp, moveChunkDown } from "@/lib/store/localSettingsSlice";
-    import { getContext } from "svelte";
+    import { getContext, onMount } from "svelte";
     import type { Writable } from "svelte/store";
     const i18n = getContext<Writable<i18nextType>>("i18n");
     import Status from "./Status.svelte";
 
-    export let localSettings: LocalSettings;
+    export let state: RootState;
     export let game: Game;
     export let dispatch: AppDispatch;
 
@@ -24,8 +24,8 @@
 </script>
 
 <article bind:clientWidth="{screenWidth}">
-    {#if screenWidth < 770 || localSettings.layout === "vertical"}
-        {#each localSettings.mobileOrder as chunk}
+    {#if screenWidth < 770 || state.localSettings.layout === "vertical"}
+        {#each state.localSettings.mobileOrder as chunk}
             {#if chunk !== "status" || game.hasStatuses}
                 <div class="botPadding">
                     <div class="card">
@@ -90,7 +90,7 @@
                         </header>
                         <div class="card-content">
                             {#if chunk === "status"}
-                                <Status {game} />
+                                <Status {game} {state} />
                             {:else if chunk === "move"}
                                 <p>Move</p>
                                 <p>Misc. Buttons</p>
@@ -117,10 +117,13 @@
                         <h1 class="subtitle lined">
                             <span>{$i18n.t("Status")}</span>
                         </h1>
-                        <Status {game} />
+                        <Status {state} {game} />
                     </div>
                 {/if}
                 <div>
+                    <h1 class="subtitle lined">
+                        <span>{$i18n.t("TimeRemaining")}</span>
+                    </h1>
                     <!-- Time entry component -->
                 </div>
                 <div>

@@ -2,6 +2,7 @@ import i18next from "i18next";
 import { createI18nStore } from "svelte-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import HttpBackend from "i18next-http-backend";
+import { addResource } from "@abstractplay/gameslib";
 
 export type i18nextType = typeof i18next;
 i18next
@@ -27,5 +28,6 @@ i18next
             escapeValue: false, // react already safes from xss
         },
     });
+addResource(i18next.language);
 
 export default () => createI18nStore(i18next);

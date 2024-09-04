@@ -32,7 +32,7 @@ export const api = createApi({
         me: builder.query<MeData, void>({
             query: () => ({
                 url: import.meta.env.VITE_API_AUTH,
-                body: JSON.stringify({query: "me"}),
+                body: JSON.stringify({ query: "me" }),
                 responseHandler: "json",
                 method: "POST",
             }),
@@ -87,10 +87,7 @@ export const api = createApi({
                 responseHandler: "json",
             }),
             transformResponse: (response: APPostResponse | GetGameResult) => {
-                if (
-                    "game" in response  &&
-                    "comments" in response
-                ) {
+                if ("game" in response && "comments" in response) {
                     return response;
                 } else {
                     response = response as APPostResponse;

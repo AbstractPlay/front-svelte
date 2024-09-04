@@ -6,12 +6,19 @@ import type {
     GameBaseSimultaneous,
     IStatusReport,
 } from "@abstractplay/gameslib";
-import type { FullGame } from "./types/backend";
+import type { FullGame, UserSettings } from "./types/backend";
+import type { RootState } from "./store";
+import { renderGlyph } from "./renderGlyph";
+import { selectUserById } from "./store/usersSlice";
 
 export type Parenthetical = {
     name: string;
     link?: string;
 };
+
+interface GameWithCustomColours extends GameBase {
+    getPlayerColour: (n: number) => number | string;
+}
 
 export class Game {
     private readonly _gameState: GameState;
@@ -95,5 +102,85 @@ export class Game {
     }
     get variants(): string[] | undefined {
         return this._engine?.getVariants();
+    }
+    get seatNames(): string[] | undefined {
+        if (this._gameState.data !== undefined) {
+            const names: string[] = [];
+            if (
+                this._engine !== undefined &&
+                "player2seat" in this._engine &&
+                typeof this._engine.player2seat === "function"
+            ) {
+                for (let i = 1; i <= this._gameState.data.numPlayers; i++) {
+                    names.push(this._engine.player2seat(i));
+                }
+            } else {
+                for (let i = 1; i <= this._gameState.data.numPlayers; i++) {
+                    names.push(`P${i}`);
+                }
+            }
+            return names;
+        } else {
+            return undefined;
+        }
+    }
+
+    public swatches(state: RootState): { isImage: boolean; value: string }[] {
+        if (this._engine !== undefined && this._gameState.data !== undefined) {
+            if (this._engine.hasFlag("shared-pieces")) {
+                return this.seatNames!.map((n) => {
+                    return { isImage: false, value: n };
+                });
+            } else {
+                const lst: { isImage: boolean; value: string }[] = [];
+                for (let i = 1; i <= this._gameState.data.numPlayers; i++) {
+                    let pnum: number | string = i;
+                    if (this._engine.hasFlag("custom-colours")) {
+                        pnum = (
+                            this._engine as GameWithCustomColours
+                        ).getPlayerColour(i);
+                    }
+                    lst.push({
+                        isImage: true,
+                        value: renderGlyph({
+                            state,
+                            glyph: "piece",
+                            colour: pnum,
+                            id: `player${i}colour`,
+                            metaGame: this.metaGame!,
+                            gameSettings:
+                                this._gameState.data.players[i - 1].settings,
+                        }),
+                    });
+                }
+                return lst;
+            }
+        } else {
+            return [];
+        }
+    }
+
+    public playerNames(
+        state: RootState,
+        n?: number
+    ): string | undefined | (string | undefined)[] {
+        if (this._gameState.data === undefined) {
+            return undefined;
+        }
+        const names = this._gameState.data?.players
+            .map((user) => selectUserById(state, user.id))
+            .map((user) => user?.name);
+        if (n === undefined) {
+            return names;
+        } else {
+            return names[n];
+        }
+    }
+
+    public playerSettings(n: number): UserSettings | undefined {
+        if (this._gameState.data !== undefined) {
+            return this._gameState.data.players[n].settings;
+        }
+        return undefined;
     }
 }

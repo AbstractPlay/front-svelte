@@ -15,13 +15,12 @@
     }
 
     let colorMode: "light" | "dark";
-    let globalMe: MeData|undefined;
+    let globalMe: MeData | undefined;
     let unsubscribe;
     onMount(() => {
         unsubscribe = data.store.subscribe(() => {
             colorMode = data.store.getState().localSettings.colorMode;
             globalMe = data.store.getState().me.data;
-            console.log(globalMe);
         });
         return unsubscribe;
     });
@@ -32,13 +31,16 @@
     $: if (colorMode !== null && colorMode !== undefined) {
         document.documentElement.setAttribute("color-mode", colorMode);
     }
+    $: if (globalMe !== undefined) {
+        console.log(globalMe);
+    }
 </script>
 
 <svelte:head>
     <title>{title}</title>
 </svelte:head>
 
-<Navbar store="{data.store}" me={globalMe} />
+<Navbar store="{data.store}" me="{globalMe}" />
 <section class="section" id="main">
     <slot />
 </section>

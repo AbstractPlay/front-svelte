@@ -7,7 +7,7 @@
     import { toggleColorMode } from "$lib/store/localSettingsSlice";
 
     export let store: AppStore;
-    export let me: MeData|undefined = undefined;
+    export let me: MeData | undefined = undefined;
 
     import logoLight from "../assets/AbstractPlayLogo-light.svg";
     import logoDark from "../assets/AbstractPlayLogo-dark.svg";

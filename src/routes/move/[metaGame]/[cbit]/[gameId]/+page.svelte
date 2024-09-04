@@ -26,6 +26,7 @@
 
     $: if (dbGame !== undefined && dbGame.status === "succeeded") {
         gameRef = new Game({ game: dbGame });
+        console.log(dbGame);
     }
 </script>
 
@@ -34,5 +35,9 @@
 {:else if gameRef.status === "failed"}
     <p>Could not load the requested game.</p>
 {:else}
-    <Skeleton {localSettings} game="{gameRef}" dispatch="{store.dispatch}" />
+    <Skeleton
+        state="{data.store.getState()}"
+        game="{gameRef}"
+        dispatch="{store.dispatch}"
+    />
 {/if}
