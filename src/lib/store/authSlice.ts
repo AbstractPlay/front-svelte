@@ -1,13 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getToken } from "../auth";
 
 export type AuthData = {
     authToken?: string;
 };
 
-const token = await getToken();
 const initialState: AuthData = {
-    authToken: token !== null ? token : undefined,
+    authToken: undefined,
 };
 
 export const authSlice = createSlice({
