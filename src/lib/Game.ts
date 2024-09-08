@@ -11,6 +11,8 @@ import type { RootState } from "./store";
 import { renderGlyph } from "./renderGlyph";
 import { selectUserById } from "./store/usersSlice";
 
+export const aiaiUserID = "SkQfHAjeDxs8eeEnScuYA";
+
 export type Parenthetical = {
     name: string;
     link?: string;
@@ -122,6 +124,99 @@ export class Game {
             return names;
         } else {
             return undefined;
+        }
+    }
+    get gameover(): boolean | undefined {
+        if (this._engine !== undefined) {
+            return this._engine.gameover;
+        }
+        return undefined;
+    }
+    get clock(): {
+        hard: boolean;
+        start: number;
+        inc: number;
+        max: number;
+        remaining: (number | undefined)[];
+    } {
+        let hard = false;
+        let start = 0;
+        let inc = 0;
+        let max = 0;
+        let remaining: (number | undefined)[] = [];
+        if (this._gameState.data !== undefined) {
+            hard = this._gameState.data.clockHard;
+            start = this._gameState.data.clockStart;
+            inc = this._gameState.data.clockInc;
+            max = this._gameState.data.clockMax;
+            remaining = this._gameState.data.players.map((u) => u.time);
+        }
+        return { hard, start, inc, max, remaining };
+    }
+    get lastmoveTime(): number | undefined {
+        return this._gameState.data?.lastMoveTime;
+    }
+    get hasBot(): boolean {
+        let has = false;
+        if (this._gameState.data !== undefined) {
+            has = this._gameState.data.players
+                .map((p) => p.id)
+                .includes(aiaiUserID);
+        }
+        return has;
+    }
+    get isTimedout(): boolean {
+        if (this._gameState.data !== undefined) {
+            const movers: number[] = [];
+            if (Array.isArray(this._gameState.data.toMove)) {
+                for (let i = 0; i < this._gameState.data.toMove.length; i++) {
+                    if (this._gameState.data.toMove[i]) {
+                        movers.push(i);
+                    }
+                }
+            } else {
+                movers.push(parseInt(this._gameState.data.toMove, 10));
+            }
+            for (const idx of movers) {
+                const remaining =
+                    this._gameState.data.players[idx].time! -
+                    (Date.now() - this.lastmoveTime!);
+                if (remaining < 0) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public playerCanClaimTimeout(id: string): boolean {
+        if (this._gameState.data !== undefined) {
+            if (this._gameState.data.players.map((p) => p.id).includes(id)) {
+                const pidx = this._gameState.data.players.findIndex(
+                    (p) => p.id === id
+                );
+                if (!this.playerCanMove(pidx)) {
+                    if (this.isTimedout) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public playerCanMove(n: number): boolean {
+        if (this.gameover === undefined || this.gameover === true) {
+            return false;
+        }
+        if (this._gameState.data === undefined) {
+            return false;
+        }
+        const toMove = this._gameState.data.toMove;
+        if (Array.isArray(toMove)) {
+            return toMove[n];
+        } else {
+            return parseInt(toMove, 10) === n;
         }
     }
 

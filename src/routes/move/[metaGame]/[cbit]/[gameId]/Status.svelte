@@ -1,13 +1,12 @@
 <script lang="ts">
     import type { Game } from "@/lib/Game";
-    import { onMount } from "svelte";
+    import { afterUpdate, onMount } from "svelte";
     import { getContext } from "svelte";
     import type { Writable } from "svelte/store";
     import type { i18nextType } from "@/lib/i18n";
     import type { IStatusReport } from "@abstractplay/gameslib";
     import { renderGlyph } from "@/lib/renderGlyph";
     import type { RootState } from "@/lib/store";
-    import { isArray } from "lodash";
     const i18n = getContext<Writable<i18nextType>>("i18n");
 
     export let game: Game;
@@ -18,6 +17,11 @@
     onMount(() => {
         variants = game.variants;
         statuses = game.statuses;
+        console.log("statuses", statuses);
+    });
+
+    afterUpdate(() => {
+        state;
     });
 
     let swatches: { isImage: boolean; value: string }[] = [];
@@ -195,7 +199,7 @@
 
 <style>
     div.scorediv {
-        overflow-x: scroll;
+        overflow-x: auto;
         scrollbar-width: thin;
     }
 </style>

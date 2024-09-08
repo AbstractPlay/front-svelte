@@ -8,6 +8,7 @@
     import type { Writable } from "svelte/store";
     const i18n = getContext<Writable<i18nextType>>("i18n");
     import Status from "./Status.svelte";
+    import Time from "./Time.svelte";
 
     export let state: RootState;
     export let game: Game;
@@ -120,12 +121,14 @@
                         <Status {state} {game} />
                     </div>
                 {/if}
-                <div>
-                    <h1 class="subtitle lined">
-                        <span>{$i18n.t("TimeRemaining")}</span>
-                    </h1>
-                    <!-- Time entry component -->
-                </div>
+                {#if game.gameover === false}
+                    <div class="bottomMargin">
+                        <h1 class="subtitle lined">
+                            <span>{$i18n.t("TimeRemaining")}</span>
+                        </h1>
+                        <Time {state} {game} />
+                    </div>
+                {/if}
                 <div>
                     <h1 class="subtitle lined">
                         <span>{$i18n.t("MakeMove")}</span>
