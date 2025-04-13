@@ -76,7 +76,7 @@
     <tbody>
         {#each playerNames as name, index}
             {@const pCanMove = game.playerCanMove(index)}
-            {@const remaining = game.clock.remaining[index]}
+            {@const remaining = game.clock.remaining[index] || 0}
             <tr class="{pCanMove ? 'tomove' : ''}">
                 <td>{name}</td>
                 <td
